@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<div style="font-family:'Montserrat',sans-serif;position:sticky;top:0;z-index:50">
+  <div style="background:#0A0E12;color:#FFFFFF;font-size:12px;font-weight:500;letter-spacing:0.01em;text-align:center;padding:9px 16px;line-height:1.4">Now available — the BYND+ Elite 90-Day Red Light Reset Protocol. <a href="Product.dc.html?p=protocol" style="color:#00E3FF;font-weight:600">Shop now</a></div>
+  <header style="background:rgba(255,255,255,0.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid #E3E8ED;color:#0A0E12">
+    <div style="width:min(100% - (var(--gutter, 32px) * 2), var(--max-w, 1260px));margin:0 auto;height:64px;padding:0;display:flex;align-items:center;justify-content:space-between;gap:24px;box-sizing:border-box">
+      <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ true }}">
+        <button onClick="{{ toggleMenu }}" aria-label="Menu" style="width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:none;border:0;color:#0A0E12;cursor:pointer">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="{{ menuIcon }}"></path></svg>
+        </button>
+      </sc-if>
+      <a href="Home.dc.html" style="display:flex;align-items:center;flex-shrink:0"><img src="assets/bynd-plus-mark.png" alt="BYND+" style="height:22px;width:auto;display:block"></a>
+      <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ false }}">
+        <nav style="display:flex;align-items:center;gap:30px;font-size:13px;font-weight:500">
+          <sc-for list="{{ nav }}" as="item" hint-placeholder-count="5">
+            <a href="{{ item.href }}" style="{{ item.style }}">{{ item.label }}</a>
+          </sc-for>
+        </nav>
+      </sc-if>
+      <div style="display:flex;align-items:center;gap:4px">
+        <button onClick="{{ openSearch }}" aria-label="Search" style="width:44px;height:44px;display:flex;align-items:center;justify-content:center;color:#0A0E12;background:none;border:none;cursor:pointer"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg></button>
+        <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ false }}">
+          <a href="#" aria-label="Account" style="width:44px;height:44px;display:flex;align-items:center;justify-content:center;color:#0A0E12"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"></path></svg></a>
+        </sc-if>
+        <button onClick="{{ openCart }}" aria-label="Cart" style="position:relative;width:44px;height:44px;display:flex;align-items:center;justify-content:center;color:#0A0E12;background:none;border:none;cursor:pointer">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 8h14l-1.2 12H6.2L5 8z"></path><path d="M9 8V6a3 3 0 0 1 6 0v2"></path></svg>
+          <span style="position:absolute;top:7px;right:5px;min-width:16px;height:16px;border-radius:8px;background:#0A0E12;color:#FFFFFF;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center">{{ cartCount }}</span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;left:0;right:0;bottom:0;top:100px;background:#FFFFFF;z-index:60;padding:16px 20px 32px;display:flex;flex-direction:column;overflow:auto;color:#0A0E12">
+      <sc-for list="{{ nav }}" as="item" hint-placeholder-count="5">
+        <a href="{{ item.href }}" style="display:flex;justify-content:space-between;align-items:center;padding:18px 0;border-bottom:1px solid #E3E8ED;font-size:22px;font-weight:600;color:#0A0E12;letter-spacing:-0.01em">{{ item.label }}<span style="font-size:16px;color:#5A636C">→</span></a>
+      </sc-for>
+      <div style="margin-top:auto;padding-top:28px;display:flex;flex-direction:column;gap:10px">
+        <a href="Red%20Light%20Therapy.dc.html" style="height:52px;border-radius:999px;background:#0A0E12;color:#FFFFFF;font-weight:600;font-size:14px;display:flex;align-items:center;justify-content:center">Shop red light</a>
+        <a href="#" style="height:52px;border-radius:999px;border:1px solid #C9D2DA;color:#0A0E12;font-weight:600;font-size:14px;display:flex;align-items:center;justify-content:center">Account</a>
+      </div>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:&quot;100px&quot;},&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;&quot;,&quot;rlt&quot;,&quot;supps&quot;,&quot;protocol&quot;,&quot;shop&quot;,&quot;contact&quot;],&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { w: typeof window !== 'undefined' ? window.innerWidth : 390, menuOpen: false, cartCount: 0 };
+  componentDidMount() {
+    this.onR = () => this.setState({ w: window.innerWidth });
+    window.addEventListener('resize', this.onR);
+    this.updateCart = () => {
+      try {
+        const raw = localStorage.getItem('bynd_cart_v1');
+        const items = raw ? JSON.parse(raw) : [];
+        const count = items.reduce((sum, i) => sum + (i.qty || 1), 0);
+        this.setState({ cartCount: count });
+      } catch (e) {}
+    };
+    this.updateCart();
+    window.addEventListener('bynd:cart-updated', this.updateCart);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onR);
+    window.removeEventListener('bynd:cart-updated', this.updateCart);
+  }
+  renderVals() {
+    const active = this.props.active || '';
+    const items = [
+      { key: 'rlt', label: 'Red Light Therapy', href: 'Red%20Light%20Therapy.dc.html' },
+      { key: 'supps', label: 'Supplements', href: 'Collection.dc.html?c=supplements' },
+      { key: 'protocol', label: '90-Day Protocol', href: 'Product.dc.html?p=protocol' },
+      { key: 'shop', label: 'Shop All', href: 'Collection.dc.html' },
+      { key: 'contact', label: 'Contact', href: 'Contact.html' }
+    ];
+    const isDesktop = this.state.w >= 960;
+    return {
+      isDesktop, isMobile: !isDesktop, menuOpen: this.state.menuOpen && !isDesktop,
+      menuIcon: this.state.menuOpen ? 'M18 6L6 18M6 6l12 12' : 'M3 7h18M3 12h18M3 17h12',
+      cartCount: this.state.cartCount || 0,
+      openSearch: () => { if (window.ByndSearch) window.ByndSearch.open(); },
+      openCart: () => { if (window.ByndCart) window.ByndCart.open(); },
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      nav: items.map(i => ({ ...i, style: { color: '#0A0E12', textDecoration: 'none', padding: '8px 0', borderBottom: i.key === active ? '1.5px solid #009CFF' : '1.5px solid transparent' } }))
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="./support.js"></script>
+  <script src="./js/store.js"></script>
+</head>
+
+<body>
+  <x-dc>
+    <helmet>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+      <link rel="stylesheet" href="css/styles.css">
+      <script src="./image-slot.js"></script>
+      <style>
+        html,
+        body {
+          margin: 0;
+          background: #FFFFFF;
+          -webkit-font-smoothing: antialiased
+        }
+
+        * {
+          box-sizing: border-box
+        }
+
+        a {
+          color: #0A0E12;
+          text-decoration: none
+        }
+
+        a:hover {
+          color: #009CFF
+        }
+
+        ::-webkit-scrollbar {
+          height: 0;
+          width: 0
+        }
+      </style>
+    </helmet>
+    <div style="background:#FFFFFF;color:#0A0E12;font-family:'Montserrat',sans-serif;min-height:100vh;overflow-x:clip">
+      <dc-import name="SiteHeader" style="position:sticky;top:0;z-index:50" active="rlt"
+        hint-size="100%,100px"></dc-import>
+
+      <section data-screen-label="RLT · Hero" style="padding:clamp(12px,1.5vw,20px) 0">
+        <div
+          style="width:min(100% - (var(--gutter, 32px) * 2), var(--max-w, 1260px));margin:0 auto;border-radius:14px;overflow:hidden;background:radial-gradient(60% 70% at 80% 40%,rgba(0,156,255,0.22),rgba(10,14,18,0) 70%),#0A0E12;color:#FFFFFF;display:flex;flex-wrap:wrap-reverse;align-items:center;box-sizing:border-box">
+          <div
+            style="flex:1 1 420px;min-width:0;padding:clamp(28px,4.5vw,64px);display:flex;flex-direction:column;gap:20px">
+            <span
+              style="font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#00E3FF">BYND+
+              Red Light Therapy</span>
+            <h1
+              style="margin:0;font-size:clamp(40px,6vw,88px);font-weight:600;line-height:0.98;letter-spacing:-0.04em;text-wrap:balance">
+              Red light, engineered for home.</h1>
+            <p style="margin:0;font-size:clamp(15px,1.3vw,18px);line-height:1.65;color:#C9D2DA;max-width:480px">Targeted
+              or full body — two BYND+ formats designed around a routine you'll actually keep.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:10px;padding-top:4px">
+              <a href="#devices"
+                style="height:52px;padding:0 30px;border-radius:999px;background:#FFFFFF;color:#0A0E12;font-weight:600;font-size:14px;display:flex;align-items:center">Shop
+                devices</a>
+              <a href="#how"
+                style="height:52px;padding:0 30px;border-radius:999px;border:1px solid rgba(255,255,255,0.4);color:#FFFFFF;font-weight:600;font-size:14px;display:flex;align-items:center">How
+                it works</a>
+            </div>
+            <div
+              style="display:flex;flex-wrap:wrap;gap:8px 20px;padding-top:14px;border-top:1px solid #232A31;font-size:12px;color:#C9D2DA">
+              <span style="display:flex;align-items:center;gap:6px"><span style="color:#00E3FF">✓</span>Secure
+                checkout</span>
+              <span style="display:flex;align-items:center;gap:6px"><span style="color:#00E3FF">✓</span>Tracked
+                shipping</span>
+              <span style="display:flex;align-items:center;gap:6px"><span style="color:#00E3FF">✓</span>Real human
+                support</span>
+            </div>
+          </div>
+          <div style="flex:1 1 420px;min-width:0;padding:clamp(12px,2.4vw,32px)">
+            <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:10px;aspect-ratio:7/5">
+              <div style="grid-row:span 2;border-radius:10px;background:#E7EEF4;position:relative;overflow:hidden"><img
+                  src="assets/precision-mini.webp" alt="BYND+ Precision Red Light (mini)"
+                  style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply">
+              </div>
+              <div style="border-radius:10px;background:#E7EEF4;position:relative;overflow:hidden"><span
+                  style="position:absolute;inset:0;background-image:url(assets/elite-full-body.webp);background-size:contain;background-position:50% 50%;background-repeat:no-repeat;mix-blend-mode:multiply"></span>
+              </div>
+             <div style="border-radius:10px;background:#E7EEF4;position:relative;overflow:hidden">
+  <img
+    src="assets/precision-mini.webp"
+    alt="BYND+ Precision Mini"
+    style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
+</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section data-screen-label="RLT · Intro"
+        style="padding:clamp(48px,5.5vw,76px) 0 clamp(32px,4vw,48px)">
+        <div
+          style="width:min(100% - (var(--gutter, 32px) * 2), 900px);margin:0 auto;display:flex;flex-direction:column;gap:22px;align-items:center;text-align:center;box-sizing:border-box">
+          <h2
+            style="margin:0;font-size:clamp(30px,4vw,54px);font-weight:600;line-height:1.08;letter-spacing:-0.03em;text-wrap:balance">
+            How red light therapy works</h2>
+          <p
+            style="margin:0;font-size:clamp(15px,1.3vw,18px);line-height:1.75;color:#34383D;max-width:680px;text-wrap:pretty">
+            Red light therapy uses specific wavelengths of light, delivered by a dense LED array, as part of a
+            consistent wellness routine. In research, it's known as photobiomodulation — the study of how light
+            interacts with the body's cells.</p>
+        </div>
+      </section>
+
+      <section data-screen-label="RLT · Three cards" style="padding:0 0 clamp(48px,5.5vw,76px)">
+        <div
+          style="width:min(100% - (var(--gutter, 32px) * 2), var(--max-w, 1260px));margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px;box-sizing:border-box">
+          <sc-for list="{{ cards }}" as="c" hint-placeholder-count="3">
+            <div style="border:1px solid #E3E8ED;border-radius:10px;overflow:hidden;display:flex;flex-direction:column">
+              <div style="aspect-ratio:4/3;background:#FFFFFF;position:relative;overflow:hidden"><image-slot
+                  id="{{ c.slot }}" src="{{ c.src }}" shape="rect" fit="{{ c.slot === 'rlt-card-2' ? 'cover' : 'contain' }}" placeholder="{{ c.slotLabel }}"
+                  style="position:absolute;inset:0"></image-slot></div>
+              <div style="padding:clamp(20px,2.4vw,32px);display:flex;flex-direction:column;gap:10px">
+                <span
+                  style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#007ACC">{{
+                  c.kicker }}</span>
+                <span style="font-size:20px;font-weight:600;line-height:1.3;letter-spacing:-0.01em">{{ c.title }}</span>
+                <span style="font-size:14px;line-height:1.65;color:#34383D">{{ c.body }}</span>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+
+      <section id="devices" data-screen-label="RLT · Devices" style="background:#E7EEF4">
+        <sc-for list="{{ devices }}" as="d" hint-placeholder-count="2">
+          <div
+            style="width:min(100% - (var(--gutter, 32px) * 2), var(--max-w, 1260px));margin:0 auto;padding:clamp(48px,5.5vw,76px) 0;display:flex;flex-wrap:wrap;gap:clamp(32px,5vw,64px);align-items:center;border-bottom:1px solid #D5DDE4;box-sizing:border-box">
+            <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:18px">
+              <span
+                style="font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#5A636C">{{
+                d.kicker }}</span>
+              <h2
+                style="margin:0;font-size:clamp(28px,3.4vw,46px);font-weight:600;line-height:1.1;letter-spacing:-0.03em;text-wrap:balance">
+                {{ d.name }}</h2>
+              <p style="margin:0;font-size:15px;line-height:1.7;color:#34383D;max-width:460px">{{ d.body }}</p>
+              <div style="display:flex;flex-direction:column;border-top:1px solid #C9D2DA;max-width:460px">
+                <sc-for list="{{ d.rows }}" as="r" hint-placeholder-count="2">
+                  <div
+                    style="display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid #C9D2DA;font-size:14px">
+                    <span style="color:#5A636C">{{ r.k }}</span><span style="font-weight:600;text-align:right">{{ r.v
+                      }}</span>
+                  </div>
+                </sc-for>
+              </div>
+              <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px 20px;padding-top:8px">
+                <a href="{{ d.href }}"
+                  style="height:52px;padding:0 30px;border-radius:999px;background:#0A0E12;color:#FFFFFF;font-weight:600;font-size:14px;display:flex;align-items:center">Add
+                  to cart</a>
+                <span style="font-size:18px;font-weight:600">{{ d.price }}</span>
+                <span
+                  style="padding:5px 10px;border-radius:999px;background:#FFFFFF;font-size:11px;font-weight:600;color:#007ACC">In
+                  stock</span>
+              </div>
+            </div>
+            <a href="{{ d.href }}"
+              style="flex:1.3 1 420px;min-width:0;aspect-ratio:4/3;border-radius:12px;background:#FFFFFF;position:relative;overflow:hidden;display:block">
+              <div style="{{ d.imgStyle }}"></div>
+            </a>
+          </div>
+        </sc-for>
+      </section>
+
+      <section data-screen-label="RLT · Anatomy" style="padding:clamp(48px,5.5vw,76px) 0">
+        <div
+          style="width:min(100% - (var(--gutter, 32px) * 2), var(--max-w, 1260px));margin:0 auto;display:flex;flex-wrap:wrap;gap:clamp(32px,5vw,64px);align-items:center;box-sizing:border-box">
+          <div
+            style="flex:1 1 440px;min-width:0;position:relative;aspect-ratio:4/3;border-radius:12px;background:#E7EEF4;overflow:hidden">
+            <img src="assets/precision-mini.webp" alt="BYND+ Precision Red Light (mini)"
+              style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply">
+            <span
+              style="position:absolute;left:58%;top:12%;width:28px;height:28px;border-radius:50%;background:#0A0E12;color:#FFFFFF;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 6px rgba(0,156,255,0.25)">1</span>
+            <span
+              style="position:absolute;left:62%;top:46%;width:28px;height:28px;border-radius:50%;background:#0A0E12;color:#FFFFFF;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 6px rgba(0,156,255,0.25)">2</span>
+            <span
+              style="position:absolute;left:34%;top:74%;width:28px;height:28px;border-radius:50%;background:#0A0E12;color:#FFFFFF;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 6px rgba(0,156,255,0.25)">3</span>
+          </div>
+          <div style="flex:1 1 360px;min-width:0;display:flex;flex-direction:column;gap:20px">
+            <span
+              style="font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#5A636C">Inside
+              the design</span>
+            <h2
+              style="margin:0;font-size:clamp(28px,3.4vw,46px);font-weight:600;line-height:1.1;letter-spacing:-0.03em">
+              Built with intent.</h2>
+            <div style="display:flex;flex-direction:column;border-top:1px solid #D5DDE4">
+              <div
+                style="display:grid;grid-template-columns:40px 1fr;gap:12px;padding:20px 0;border-bottom:1px solid #D5DDE4">
+                <span style="font-size:14px;font-weight:700;color:#007ACC">01</span><span
+                  style="display:flex;flex-direction:column;gap:6px"><span
+                    style="font-size:16px;font-weight:600">Onboard controls</span><span
+                    style="font-size:14px;line-height:1.6;color:#34383D">Start and manage sessions directly from the top
+                    of the device.</span></span>
+              </div>
+              <div
+                style="display:grid;grid-template-columns:40px 1fr;gap:12px;padding:20px 0;border-bottom:1px solid #D5DDE4">
+                <span style="font-size:14px;font-weight:700;color:#007ACC">02</span><span
+                  style="display:flex;flex-direction:column;gap:6px"><span style="font-size:16px;font-weight:600">Dense
+                    LED array</span><span style="font-size:14px;line-height:1.6;color:#34383D">Rows of LEDs across the
+                    full face of the panel.</span></span>
+              </div>
+              <div
+                style="display:grid;grid-template-columns:40px 1fr;gap:12px;padding:20px 0;border-bottom:1px solid #D5DDE4">
+                <span style="font-size:14px;font-weight:700;color:#007ACC">03</span><span
+                  style="display:flex;flex-direction:column;gap:6px"><span
+                    style="font-size:16px;font-weight:600">Desktop stand</span><span
+                    style="font-size:14px;line-height:1.6;color:#34383D">A weighted base that holds the panel upright on
+                    a desk or counter.</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="how" data-screen-label="RLT · How to use"
+        style="padding:0 0 clamp(48px,5.5vw,76px)">
+        <div style="width:min(100% - (var(--gutter, 32px) * 2), var(--max-w, 1260px));margin:0 auto;display:flex;flex-direction:column;gap:clamp(36px,5vw,60px);box-sizing:border-box">
+          <div style="display:flex;flex-direction:column;gap:12px;align-items:center;text-align:center">
+            <span
+              style="font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#5A636C">Your
+              routine</span>
+            <h2 style="margin:0;font-size:clamp(30px,4vw,54px);font-weight:600;line-height:1.08;letter-spacing:-0.03em">
+              Three steps. Every session.</h2>
+          </div>
+          <sc-for list="{{ steps }}" as="s" hint-placeholder-count="3">
+            <div style="{{ s.rowStyle }}">
+              <div
+                style="flex:1 1 380px;min-width:0;aspect-ratio:4/3;border-radius:14px;overflow:hidden;background:#FFFFFF;color:#5A636C;position:relative">
+                <div style="position:absolute;inset:0"><image-slot id="{{ s.slot }}" src="{{ s.src }}" shape="rect"
+                    fit="contain" placeholder="{{ s.slotLabel }}"></image-slot></div>
+              </div>
+              <div
+                style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:14px;padding:0 clamp(0px,3vw,48px)">
+                <span
+                  style="font-size:clamp(40px,5vw,64px);font-weight:300;line-height:1;color:#009CFF;letter-spacing:-0.04em">{{
+                  s.n }}</span>
+                <span style="font-size:clamp(22px,2.4vw,30px);font-weight:600;letter-spacing:-0.02em">{{ s.title
+                  }}</span>
+                <span style="font-size:15px;line-height:1.7;color:#34383D;max-width:440px">{{ s.body }}</span>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+
+      <section data-screen-label="RLT · Protocol band" style="padding:0">
+        <div
+          style="width:min(100% - (var(--gutter, 32px) * 2), var(--max-w, 1260px));margin:0 auto;border-radius:14px;overflow:hidden;background:#0A0E12;color:#FFFFFF;display:flex;flex-wrap:wrap;align-items:center;box-sizing:border-box">
+          <div
+            style="flex:1 1 420px;min-width:0;padding:clamp(28px,4.5vw,64px);display:flex;flex-direction:column;gap:20px">
+            <span
+              style="font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#00E3FF">The
+              complete system</span>
+            <h2
+              style="margin:0;font-size:clamp(30px,4vw,54px);font-weight:600;line-height:1.06;letter-spacing:-0.03em;text-wrap:balance">
+              The 90-Day Red Light Reset Protocol.</h2>
+            <p style="margin:0;font-size:15px;line-height:1.7;color:#C9D2DA;max-width:460px">The BYND+ Elite Red Light
+              (Full Body System) paired with Premium Whey Protein, Creatine Monohydrate, Platinum Mobility+ and Omega
+              3+.</p>
+            <a href="Product.dc.html?p=protocol"
+              style="align-self:flex-start;height:52px;padding:0 30px;border-radius:999px;background:linear-gradient(180deg,#00E3FF,#009CFF);color:#0A0E12;font-weight:700;font-size:14px;display:flex;align-items:center">View
+              the protocol</a>
+          </div>
+          <div
+            style="flex:1 1 380px;min-width:0;padding:0 clamp(20px,4vw,56px) clamp(20px,4vw,56px);padding-top:clamp(0px,4vw,56px)">
+            <div style="aspect-ratio:1/1;border-radius:10px;background:#FFFFFF;position:relative;overflow:hidden"><img
+                src="assets/protocol-bundle.webp" alt="BYND+ 90-Day Protocol"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:4%"></div>
+          </div>
+        </div>
+      </section>
+
+      <section data-screen-label="RLT · FAQ"
+        style="padding:clamp(48px,5.5vw,76px) 0 clamp(36px,4vw,56px)">
+        <div style="width:min(100% - (var(--gutter, 32px) * 2), 900px);margin:0 auto;display:flex;flex-direction:column;gap:36px;box-sizing:border-box">
+          <h2
+            style="margin:0;text-align:center;font-size:clamp(28px,3.6vw,44px);font-weight:600;line-height:1.1;letter-spacing:-0.03em">
+            Frequently asked questions</h2>
+          <div style="border-top:1px solid #D5DDE4">
+            <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="4">
+              <div style="border-bottom:1px solid #D5DDE4">
+                <button onClick="{{ f.toggle }}"
+                  style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;background:none;border:0;color:#0A0E12;font-family:'Montserrat',sans-serif;font-size:15px;font-weight:600;text-align:left;cursor:pointer;line-height:1.45">{{
+                  f.q }}<span style="flex-shrink:0;font-size:20px;font-weight:400;color:#5A636C">{{ f.icon
+                    }}</span></button>
+                <sc-if value="{{ f.open }}" hint-placeholder-val="{{ false }}">
+                  <p style="margin:0;padding:0 40px 22px 0;font-size:15px;line-height:1.7;color:#34383D">{{ f.a }}</p>
+                </sc-if>
+              </div>
+            </sc-for>
+          </div>
+          <p
+            style="margin:0;padding:20px 24px;border-radius:8px;background:#F1F4F7;font-size:12px;line-height:1.7;color:#5A636C;text-align:center">
+            BYND+ red light devices are intended for general wellness use. They are not intended to diagnose, treat,
+            cure, or prevent any disease. Consult your healthcare provider before starting any new wellness routine.</p>
+        </div>
+      </section>
+
+      <section data-screen-label="RLT · Closing" style="padding:0 0 clamp(48px,5.5vw,76px)">
+        <div
+          style="width:min(100% - (var(--gutter, 32px) * 2), var(--max-w, 1260px));margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center;gap:22px;padding-top:clamp(40px,5vw,64px);border-top:1px solid #E3E8ED;box-sizing:border-box">
+          <h2
+            style="margin:0;font-size:clamp(34px,5vw,72px);font-weight:600;line-height:1.02;letter-spacing:-0.04em;max-width:900px;text-wrap:balance">
+            Find the format that fits your routine.</h2>
+          <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center">
+            <a href="Product.dc.html?p=mini"
+              style="height:52px;padding:0 30px;border-radius:999px;background:#0A0E12;color:#FFFFFF;font-weight:600;font-size:14px;display:flex;align-items:center">Shop
+              Precision (mini)</a>
+            <a href="Product.dc.html?p=elite"
+              style="height:52px;padding:0 30px;border-radius:999px;border:1px solid #0A0E12;color:#0A0E12;font-weight:600;font-size:14px;display:flex;align-items:center">Shop
+              Elite</a>
+          </div>
+        </div>
+      </section>
+
+      <dc-import name="SiteFooter" hint-size="100%,640px"></dc-import>
+    </div>
+  </x-dc>
+  <script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { openFaq: 0 };
+  renderVals() {
+    const tile = (url, size, pos) => ({ position: 'absolute', inset: 0, backgroundImage: `url(${url})`, backgroundSize: size, backgroundPosition: pos, backgroundRepeat: 'no-repeat', mixBlendMode: 'multiply' });
+    const cards = [
+      { kicker: '01 — What it is', title: 'Light, delivered precisely.', body: 'A dense array of LEDs emits red light toward the area you position in front of the panel.', src: 'assets/precision-mini.webp', slot: 'rlt-card-1', slotLabel: 'IMG L-02 · Detail: LED array glowing red, clean product macro' },
+      { kicker: '02 — A session', title: 'Short, simple, repeatable.', body: 'Position yourself, start the device from its onboard controls, and follow the guidance in your user manual.', src: 'assets/bynd-protocol.png', slot: 'rlt-card-2', slotLabel: 'IMG L-03 · Lifestyle: seated session in front of a panel, calm home setting' },
+      { kicker: '03 — Where it fits', title: 'Part of a wider protocol.', body: 'Light works best as a habit — alongside training, sleep and daily nutrition.', src: 'assets/whey-duo.webp', slot: 'rlt-card-3', slotLabel: 'IMG L-04 · Lifestyle: morning routine — training gear, shaker, device in background' }
+    ];
+    const devices = [
+      { kicker: '01 / Targeted', name: 'BYND+ Precision Red Light (mini)', body: 'A compact, stand-mounted panel for focused sessions — sized for a desk, counter or nightstand.', price: '$3,500.00', href: 'Product.dc.html?p=mini', imgStyle: tile('assets/precision-mini.webp', 'cover', '50% 50%'), rows: [{ k: 'Format', v: 'Desktop, stand-mounted' }, { k: 'Coverage', v: 'Targeted areas' }] },
+      { kicker: '02 / Full body', name: 'BYND+ Elite Red Light (Full Body System)', body: 'A freestanding, full-height panel built for whole-body sessions at home.', price: '$6,000.00', href: 'Product.dc.html?p=elite', imgStyle: tile('assets/elite-full-body.webp', 'contain', '50% 50%'), rows: [{ k: 'Format', v: 'Freestanding, full height' }, { k: 'Coverage', v: 'Full body' }] }
+    ];
+    const steps = [
+      { n: '01', title: 'Position', body: 'Set up the device and position yourself at the distance recommended in your user manual.', src: 'assets/bynd-protocol.png', slot: 'rlt-step-1', slotLabel: 'IMG L-05 · Setting up the Elite panel in a home gym corner' },
+      { n: '02', title: 'Start your session', body: 'Use the onboard controls to begin. Relax, breathe, stay still.', src: 'assets/precision-mini.webp', slot: 'rlt-step-2', slotLabel: 'IMG L-06 · Close-up: hand pressing onboard controls on top of device' },
+      { n: '03', title: 'Repeat', body: 'Consistency is the protocol. Build sessions into the same moment of your day.', src: 'assets/whey-float.webp', slot: 'rlt-step-3', slotLabel: 'IMG L-07 · Lifestyle: evening session, red glow, relaxed posture' }
+    ].map((s, i) => ({ ...s, rowStyle: { display: 'flex', flexWrap: i % 2 ? 'wrap-reverse' : 'wrap', flexDirection: i % 2 ? 'row-reverse' : 'row', gap: 'clamp(24px,4vw,48px)', alignItems: 'center' } }));
+    const faqRaw = [
+      { q: 'Which BYND+ device should I choose?', a: 'Choose the Precision (mini) for targeted, desktop sessions in smaller spaces. Choose the Elite (Full Body System) for full-body sessions with a freestanding, full-height panel.' },
+      { q: 'Can I use red light therapy at home?', a: 'Yes — both BYND+ devices are designed for home use. Always follow the instructions in your user manual.' },
+      { q: "What's included in the 90-Day Red Light Reset Protocol?", a: 'The BYND+ Elite Red Light (Full Body System) with Premium Whey Protein, Creatine Monohydrate, Platinum Mobility+ and Omega 3+.' },
+      { q: 'How do I contact BYND Human with a question?', a: 'Reach the team through the Contact page — we will help you choose the right format.' }
+    ];
+    return {
+      cards, devices, steps,
+      faqs: faqRaw.map((f, i) => ({ ...f, open: this.state.openFaq === i, icon: this.state.openFaq === i ? '−' : '+', toggle: () => this.setState(s => ({ openFaq: s.openFaq === i ? -1 : i })) }))
+    };
+  }
+}
+</script>
+</body>
+
+</html>

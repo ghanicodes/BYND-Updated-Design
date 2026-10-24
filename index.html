@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BYND Human — Red Light Therapy & Premium Supplements</title>
+  <meta name="description"
+    content="Professional red light therapy devices and premium daily supplements — one system for recovery, routine and performance, built for home.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress" id="scroll-progress"></div>
+
+  <!-- ============================================================
+     ANNOUNCEMENT BAR + SITE HEADER
+     ============================================================ -->
+  <div id="site-header-wrap" style="position:sticky;top:0;z-index:100">
+    <div class="announcement">
+      Now available — the BYND+ Elite 90-Day Red Light Reset Protocol. <a href="Product.dc.html?p=protocol">Shop now</a>
+    </div>
+    <header class="site-header" id="site-header">
+      <div class="header-inner">
+        <button class="menu-toggle" id="menu-toggle" aria-label="Menu">
+          <span class="menu-icon-open"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.6">
+              <path d="M3 7h18M3 12h18M3 17h12"></path>
+            </svg></span>
+          <span class="menu-icon-close"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.6">
+              <path d="M6 6l12 12M6 18L18 6"></path>
+            </svg></span>
+        </button>
+        <a href="index.html" class="header-logo"><img src="assets/bynd-plus-mark.png" alt="BYND+" loading="eager"></a>
+        <nav class="header-nav" id="header-nav">
+          <a href="Red%20Light%20Therapy.dc.html">Red Light Therapy</a>
+          <a href="Collection.dc.html?c=supplements">Supplements</a>
+          <a href="Product.dc.html?p=protocol">90-Day Protocol</a>
+          <a href="Collection.dc.html">Shop All</a>
+          <a href="Contact.html">Contact</a>
+        </nav>
+        <div class="header-actions">
+          <button type="button" class="header-icon" id="search-toggle" aria-label="Search">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <circle cx="11" cy="11" r="7"></circle>
+              <path d="M20 20l-4-4"></path>
+            </svg>
+          </button>
+          <a href="Product.dc.html?p=protocol" class="header-icon header-icon--account" aria-label="Account">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <circle cx="12" cy="8" r="4"></circle>
+              <path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"></path>
+            </svg>
+          </a>
+          <button type="button" class="header-icon" id="cart-toggle" aria-label="Cart">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M5 8h14l-1.2 12H6.2L5 8z"></path>
+              <path d="M9 8V6a3 3 0 0 1 6 0v2"></path>
+            </svg>
+            <span class="cart-count">0</span>
+          </button>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="Red%20Light%20Therapy.dc.html" class="mobile-nav-link">Red Light Therapy <span>→</span></a>
+    <a href="Collection.dc.html?c=supplements" class="mobile-nav-link">Supplements <span>→</span></a>
+    <a href="Product.dc.html?p=protocol" class="mobile-nav-link">90-Day Protocol <span>→</span></a>
+    <a href="Collection.dc.html" class="mobile-nav-link">Shop All <span>→</span></a>
+    <a href="Contact.html" class="mobile-nav-link">Contact <span>→</span></a>
+    <div class="mobile-nav-ctas">
+      <a href="Red%20Light%20Therapy.dc.html" class="btn btn--primary" style="width:100%;justify-content:center">Shop
+        red light</a>
+      <a href="Product.dc.html?p=protocol" class="btn btn--outline"
+        style="width:100%;justify-content:center">Account</a>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ============================================================
+     SECTION 1 — HERO
+     ============================================================ -->
+    <section class="hero reveal" id="hero">
+      <div class="hero-card">
+        <div class="hero-content">
+          <span class="hero-kicker">
+            <span class="hero-kicker-dot"></span>
+            <span class="eyebrow" style="color:var(--graphite)">BYND+ Red Light &amp; Supplements</span>
+          </span>
+          <h1 class="heading-display">Go beyond your baseline.</h1>
+          <p class="body-text" style="max-width:480px;text-wrap:pretty">Professional red light therapy devices and
+            premium daily supplements — one system for recovery, routine and performance, built for home.</p>
+          <div class="hero-actions">
+            <a href="Red%20Light%20Therapy.dc.html" class="btn btn--primary">Shop red light</a>
+            <a href="Collection.dc.html?c=supplements" class="btn btn--outline">Explore supplements</a>
+          </div>
+          <div class="hero-trust">
+            <div class="hero-trust-items">
+              <span class="hero-trust-item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#009CFF" stroke-width="1.8">
+                  <rect x="4" y="10" width="16" height="11" rx="2"></rect>
+                  <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
+                </svg>
+                Secure checkout
+              </span>
+              <span class="hero-trust-item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#009CFF" stroke-width="1.8">
+                  <path d="M3 7h11v10H3zM14 10h4l3 3v4h-7"></path>
+                  <circle cx="7" cy="18" r="1.6"></circle>
+                  <circle cx="17" cy="18" r="1.6"></circle>
+                </svg>
+                Tracked shipping
+              </span>
+              <span class="hero-trust-item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#009CFF" stroke-width="1.8">
+                  <path d="M4 5h16v11H8l-4 4z"></path>
+                </svg>
+                Real human support
+              </span>
+            </div>
+            <div class="hero-payments">
+              <span class="payment-icon"
+                style="background:#fff;border:1px solid #D5DDE4;color:#1A1F71;font-style:italic">VISA</span>
+              <span class="payment-icon" style="background:#fff;border:1px solid #D5DDE4"><span
+                  style="width:11px;height:11px;border-radius:50%;background:#EB001B"></span><span
+                  style="width:11px;height:11px;border-radius:50%;background:#F79E1B;margin-left:-4px;opacity:0.9"></span></span>
+              <span class="payment-icon" style="background:#2E77BC;color:#fff;font-size:8px">AMEX</span>
+              <span class="payment-icon"
+                style="background:#fff;border:1px solid #D5DDE4;color:#003087;font-size:8px;font-style:italic">PayPal</span>
+              <span class="payment-icon"
+                style="background:#5A31F4;color:#fff;font-size:9px;font-style:italic">shop</span>
+              <span class="payment-icon"
+                style="background:#fff;border:1px solid #D5DDE4;color:#3C4043;font-size:8px;font-weight:700">G
+                Pay</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <img src="assets/protocol-bundle.webp" alt="BYND+ Elite Red Light with the BYND supplement range"
+            loading="eager">
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+     SECTION 2 — TRUST STRIP
+     ============================================================ -->
+    <section class="trust-strip reveal" id="trust-strip">
+      <div class="trust-grid">
+        <div class="trust-card">
+          <span class="trust-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <rect x="4" y="10" width="16" height="11" rx="2"></rect>
+              <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
+            </svg>
+          </span>
+          <span class="trust-text">
+            <span class="trust-title">Secure checkout</span>
+            <span class="trust-body">Encrypted payments with all major cards and wallets.</span>
+          </span>
+        </div>
+        <div class="trust-card">
+          <span class="trust-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M3 7h11v10H3zM14 10h4l3 3v4h-7"></path>
+              <circle cx="7" cy="18" r="1.6"></circle>
+              <circle cx="17" cy="18" r="1.6"></circle>
+            </svg>
+          </span>
+          <span class="trust-text">
+            <span class="trust-title">Tracked shipping</span>
+            <span class="trust-body">Every order ships with tracking to your door.</span>
+          </span>
+        </div>
+        <div class="trust-card">
+          <span class="trust-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"></path>
+              <path d="M9 12l2 2 4-4"></path>
+            </svg>
+          </span>
+          <span class="trust-text">
+            <span class="trust-title">Quality guaranteed</span>
+            <span class="trust-body">Devices and supplements held to one BYND+ standard.</span>
+          </span>
+        </div>
+        <div class="trust-card">
+          <span class="trust-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M4 5h16v11H8l-4 4z"></path>
+            </svg>
+          </span>
+          <span class="trust-text">
+            <span class="trust-title">Real human support</span>
+            <span class="trust-body">Questions on choosing a device? Talk to our team.</span>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+     SECTION 3 — SHOP ROW
+     ============================================================ -->
+    <section class="shop-section" id="shop">
+      <div class="container">
+        <div class="shop-header reveal">
+          <div class="shop-header-left">
+            <h2 class="heading-section">Your routine, <span class="italic-accent">fully supported</span></h2>
+            <span style="font-size:14px;color:var(--slate)">Shop by category</span>
+          </div>
+          <div class="shop-header-right">
+            <a href="Collection.dc.html" class="shop-view-all">View all</a>
+            <button class="arrow-btn arrow-btn--outline" id="shop-prev" aria-label="Previous">←</button>
+            <button class="arrow-btn arrow-btn--filled" id="shop-next" aria-label="Next">→</button>
+          </div>
+        </div>
+        <div class="chips-row reveal" id="chips-row">
+          <button class="chip active" data-cat="all">All</button>
+          <button class="chip" data-cat="rlt">Red Light Therapy</button>
+          <button class="chip" data-cat="supps">Supplements</button>
+          <button class="chip" data-cat="protocol">Protocols</button>
+        </div>
+      </div>
+      <div class="container">
+        <div class="product-row" id="product-row">
+          <!-- Elite -->
+          <div class="product-card" data-cat="rlt">
+            <a href="Product.dc.html?p=elite" class="product-card-img">
+              <div
+                style="position:absolute;inset:12px;background-image:url(assets/elite-full-body.webp);background-size:contain;background-position:50% 50%;background-repeat:no-repeat;mix-blend-mode:multiply">
+              </div>
+              <span class="badge product-card-badge">Full body</span>
+            </a>
+            <div class="product-card-info">
+              <a href="Product.dc.html?p=elite" class="product-card-name">BYND+ Elite Red Light (Full Body System)</a>
+              <span class="product-card-tags">Red light · Full body</span>
+            </div>
+            <a href="Product.dc.html?p=elite" class="btn btn--card">Add to cart · $6,000.00</a>
+          </div>
+          <!-- Precision mini -->
+          <div class="product-card" data-cat="rlt">
+            <a href="Product.dc.html?p=mini" class="product-card-img">
+              <img src="assets/precision-mini.webp" alt="BYND+ Precision Red Light (mini)" loading="lazy">
+              <span class="badge product-card-badge">Targeted</span>
+            </a>
+            <div class="product-card-info">
+              <a href="Product.dc.html?p=mini" class="product-card-name">BYND+ Precision Red Light (mini)</a>
+              <span class="product-card-tags">Red light · Targeted</span>
+            </div>
+            <a href="Product.dc.html?p=mini" class="btn btn--card">Add to cart · $3,500.00</a>
+          </div>
+          <!-- Protocol Bundle -->
+          <div class="product-card" data-cat="protocol">
+            <a href="Product.dc.html?p=protocol" class="product-card-img">
+              <div
+                style="position:absolute;inset:0;background-image:url(assets/protocol-bundle.webp);background-size:contain;background-position:50% 50%;background-repeat:no-repeat">
+              </div>
+              <span class="badge product-card-badge">Bundle</span>
+            </a>
+            <div class="product-card-info">
+              <a href="Product.dc.html?p=protocol" class="product-card-name">BYND+ Elite 90-Day Red Light Reset
+                Protocol</a>
+              <span class="product-card-tags">Device + supplements</span>
+            </div>
+            <a href="Product.dc.html?p=protocol" class="btn btn--card">View protocol</a>
+          </div>
+          <!-- Whey -->
+          <div class="product-card" data-cat="supps">
+            <a href="Product.dc.html?p=whey" class="product-card-img">
+              <img src="assets/whey-vanilla.webp" alt="Premium Whey Protein" loading="lazy">
+              <span class="badge product-card-badge">Best seller</span>
+            </a>
+            <div class="product-card-info">
+              <a href="Product.dc.html?p=whey" class="product-card-name">Premium Whey Protein</a>
+              <span class="product-card-tags">Recovery · Daily nutrition</span>
+            </div>
+            <a href="Product.dc.html?p=whey" class="btn btn--card">Add to cart · $55.00</a>
+          </div>
+          <!-- Creatine -->
+          <div class="product-card" data-cat="supps">
+            <a href="Product.dc.html?p=creatine" class="product-card-img">
+              <img src="assets/creatine.webp" alt="Creatine Monohydrate" loading="lazy">
+              <span class="badge product-card-badge">In stock</span>
+            </a>
+            <div class="product-card-info">
+              <a href="Product.dc.html?p=creatine" class="product-card-name">Creatine Monohydrate</a>
+              <span class="product-card-tags">Strength · Energy</span>
+            </div>
+            <a href="Product.dc.html?p=creatine" class="btn btn--card">Add to cart</a>
+          </div>
+          <!-- Mobility -->
+          <div class="product-card" data-cat="supps">
+            <a href="Product.dc.html?p=mobility" class="product-card-img">
+              <img src="assets/mobility.webp" alt="Platinum Mobility+" loading="lazy">
+              <span class="badge product-card-badge">In stock</span>
+            </a>
+            <div class="product-card-info">
+              <a href="Product.dc.html?p=mobility" class="product-card-name">Platinum Mobility+</a>
+              <span class="product-card-tags">Joints · Mobility</span>
+            </div>
+            <a href="Product.dc.html?p=mobility" class="btn btn--card">Add to cart</a>
+          </div>
+          <!-- Omega -->
+          <div class="product-card" data-cat="supps">
+            <a href="Product.dc.html?p=omega" class="product-card-img">
+              <img src="assets/omega.webp" alt="Omega 3+ Fish Oil" loading="lazy">
+              <span class="badge product-card-badge">In stock</span>
+            </a>
+            <div class="product-card-info">
+              <a href="Product.dc.html?p=omega" class="product-card-name">Omega 3+ Fish Oil</a>
+              <span class="product-card-tags">Heart · Brain · Joints</span>
+            </div>
+            <a href="Product.dc.html?p=omega" class="btn btn--card">Add to cart</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+     SECTION 4 — RED LIGHT INTRO (50/50 split)
+     ============================================================ -->
+    <section class="split-section reveal" id="red-light-intro">
+      <div class="split-inner">
+        <div class="split-media">
+          <img src="assets/precision-mini.webp" alt="BYND+ Precision Red Light (mini)" loading="lazy">
+        </div>
+        <div class="split-content">
+          <span class="eyebrow">Red light therapy</span>
+          <h2 class="heading-feature">Engineered light, built for home.</h2>
+          <p class="body-text" style="max-width:500px">From focused desktop sessions to full-body routines, BYND+
+            devices bring red light therapy into a daily schedule — no clinic appointment required.</p>
+          <div class="check-grid">
+            <span class="check-item"><span class="check-mark">✓</span>Targeted &amp; full-body formats</span>
+            <span class="check-item"><span class="check-mark">✓</span>Dense LED array</span>
+            <span class="check-item"><span class="check-mark">✓</span>Onboard controls</span>
+            <span class="check-item"><span class="check-mark">✓</span>Pairs with the 90-day protocol</span>
+          </div>
+          <a href="Red%20Light%20Therapy.dc.html" class="btn btn--primary" style="align-self:flex-start">Explore red
+            light therapy</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+     SECTION 5 — DEVICES DARK BAND
+     ============================================================ -->
+    <section class="dark-band reveal" id="devices">
+      <div class="dark-band-inner">
+        <div class="dark-band-header">
+          <span class="eyebrow eyebrow--cyan" style="letter-spacing:0.16em">Devices</span>
+          <h2 class="heading-section-lg devices-heading">Two formats. One standard.</h2>
+        </div>
+        <div class="devices-grid">
+          <!-- Precision mini -->
+          <a href="Product.dc.html?p=mini" class="device-card">
+            <div class="device-card-img">
+              <img src="assets/precision-mini.webp" alt="BYND+ Precision Red Light (mini)" loading="lazy">
+              <span class="device-card-tag">Targeted</span>
+            </div>
+            <div class="device-card-body">
+              <div class="device-card-info">
+                <span class="device-card-title">Precision (mini)</span>
+                <div class="device-card-meta">
+                  <span>Desktop, stand-mounted</span>
+                  <span class="device-card-price">$3,500.00</span>
+                </div>
+              </div>
+              <span class="btn btn--device">Shop the mini</span>
+            </div>
+          </a>
+          <!-- Elite -->
+          <a href="Product.dc.html?p=elite" class="device-card">
+            <div class="device-card-img">
+              <img src="assets/elite-full-body.webp" alt="BYND+ Elite Red Light (Full Body System)" loading="lazy">
+              <span class="device-card-tag">Full body</span>
+            </div>
+            <div class="device-card-body">
+              <div class="device-card-info">
+                <span class="device-card-title">Elite (Full Body System)</span>
+                <div class="device-card-meta">
+                  <span>Freestanding, full height</span>
+                  <span class="device-card-price">$6,000.00</span>
+                </div>
+              </div>
+              <span class="btn btn--device">Shop the Elite</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+     SECTION 6 — PRINCIPLES (Accordion + Image)
+     ============================================================ -->
+    <section class="reveal principles-section" id="principles" style="padding:var(--section-pad) 0">
+      <div
+        class="principles-inner"
+        style="width:min(100% - (var(--gutter) * 2), var(--max-w));margin:0 auto;display:flex;flex-wrap:wrap;gap:clamp(32px,5vw,64px);align-items:center;box-sizing:border-box">
+        <div style="flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:18px">
+          <span class="eyebrow">The science of light</span>
+          <h2 class="heading-feature">Photobiomodulation, made practical.</h2>
+          <p class="body-text" style="max-width:520px">Red light therapy — known in research as photobiomodulation —
+            studies how specific wavelengths of light interact with the body's cells.</p>
+          <div class="accordion-list" id="principles-accordion" style="margin-top:10px">
+            <div class="accordion-item open" data-accordion="principles">
+              <button class="accordion-trigger accordion-trigger--lg">
+                Precision
+                <span class="accordion-icon">+</span>
+              </button>
+              <div class="accordion-panel">
+                <p class="accordion-panel-inner">Targeted and full-body formats, so light goes exactly where your
+                  routine needs it.</p>
+              </div>
+            </div>
+            <div class="accordion-item" data-accordion="principles">
+              <button class="accordion-trigger accordion-trigger--lg">
+                Consistency
+                <span class="accordion-icon">+</span>
+              </button>
+              <div class="accordion-panel">
+                <p class="accordion-panel-inner">Designed to live at home and fit a daily schedule — the habit is the
+                  protocol.</p>
+              </div>
+            </div>
+            <div class="accordion-item" data-accordion="principles">
+              <button class="accordion-trigger accordion-trigger--lg">
+                Integration
+                <span class="accordion-icon">+</span>
+              </button>
+              <div class="accordion-panel">
+                <p class="accordion-panel-inner">Light pairs with daily nutrition in one structured, 90-day protocol.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          style="flex:1 1 380px;min-width:0;aspect-ratio:4/5;max-height:520px;border-radius:var(--radius-lg);overflow:hidden;background:var(--ice);position:relative">
+          <div
+            style="position:absolute;inset:0 0 88px 0;background-image:url(assets/elite-full-body.webp);background-size:contain;background-position:50% 50%;background-repeat:no-repeat">
+          </div>
+          <div
+            style="position:absolute;left:16px;right:16px;bottom:16px;padding:16px 18px;border-radius:var(--radius-md);background:rgba(255,255,255,0.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:flex;justify-content:space-between;align-items:center;gap:12px">
+            <span style="display:flex;flex-direction:column;gap:3px">
+              <span
+                style="font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#007ACC">Dense
+                LED array</span>
+              <span style="font-size:14px;font-weight:600">BYND+ Elite (Full Body System)</span>
+            </span>
+            <a href="Product.dc.html?p=elite"
+              style="width:38px;height:38px;flex-shrink:0;border-radius:50%;background:var(--carbon);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:16px">→</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+     SECTION 7 — WHEY SPOTLIGHT (Ice bg)
+     ============================================================ -->
+    <section class="ice-section reveal" id="whey-spotlight">
+      <div class="ice-inner">
+        <div class="spotlight-content">
+          <span class="spotlight-badge">— Featured supplement</span>
+          <h2 class="heading-feature">Premium Whey Protein.</h2>
+          <p class="body-text" style="max-width:500px">22 grams of protein per serving from whey protein isolate and
+            concentrate. Available in Vanilla Ice Cream and Chocolate Cake.</p>
+          <div class="stats-row">
+            <div class="stat">
+              <span class="stat-value">22g</span>
+              <span class="stat-label">Protein / serving</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value">16.9 oz</span>
+              <span class="stat-label">480 g container</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value">2</span>
+              <span class="stat-label">Scoops, 8–12 oz water</span>
+            </div>
+          </div>
+          <a href="Product.dc.html?p=whey" class="btn btn--primary" style="align-self:flex-start">Shop whey — $55.00</a>
+        </div>
+        <div class="spotlight-media">
+          <img src="assets/whey-duo.webp" alt="BYND Premium Whey Protein, Vanilla Ice Cream" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+     SECTION 8 — DAILY STACK (4 supplement cards)
+     ============================================================ -->
+    <section class="stack-section" id="daily-stack">
+      <div class="stack-inner">
+        <div class="stack-header reveal">
+          <span class="eyebrow" style="letter-spacing:0.16em">Supplements</span>
+          <h2 class="heading-section-lg">The daily stack.</h2>
+          <p style="font-size:15px;line-height:1.6;color:var(--graphite)">Four essentials designed to sit alongside your
+            light routine.</p>
+        </div>
+        <div class="stack-grid">
+          <!-- Whey -->
+          <a href="Product.dc.html?p=whey" class="stack-card reveal">
+            <div class="stack-card-img">
+              <img src="assets/whey-chocolate.webp" alt="Premium Whey Protein" loading="lazy">
+            </div>
+            <div class="stack-card-body">
+              <span class="stack-card-kicker">Recovery</span>
+              <span class="stack-card-name">Premium Whey Protein</span>
+              <span class="stack-card-desc">22g protein per serving from whey isolate and concentrate.</span>
+              <span class="stack-card-footer">
+                <span class="stack-card-price">$55.00</span>
+                <span class="stack-card-cta">Shop →</span>
+              </span>
+            </div>
+          </a>
+          <!-- Creatine -->
+          <a href="Product.dc.html?p=creatine" class="stack-card reveal reveal-d1">
+            <div class="stack-card-img">
+              <img src="assets/creatine.webp" alt="Creatine Monohydrate" loading="lazy">
+            </div>
+            <div class="stack-card-body">
+              <span class="stack-card-kicker">Performance</span>
+              <span class="stack-card-name">Creatine Monohydrate</span>
+              <span class="stack-card-desc">Supports muscle strength, lean body mass and cellular energy
+                production.*</span>
+              <span class="stack-card-footer">
+                <span class="stack-card-price">Price TBC</span>
+                <span class="stack-card-cta">Shop →</span>
+              </span>
+            </div>
+          </a>
+          <!-- Mobility -->
+          <a href="Product.dc.html?p=mobility" class="stack-card reveal reveal-d2">
+            <div class="stack-card-img">
+              <img src="assets/mobility.webp" alt="Platinum Mobility+" loading="lazy">
+            </div>
+            <div class="stack-card-body">
+              <span class="stack-card-kicker">Mobility</span>
+              <span class="stack-card-name">Platinum Mobility+</span>
+              <span class="stack-card-desc">Supports joint comfort, flexibility and healthy mobility.* 60
+                capsules.</span>
+              <span class="stack-card-footer">
+                <span class="stack-card-price">Price TBC</span>
+                <span class="stack-card-cta">Shop →</span>
+              </span>
+            </div>
+          </a>
+          <!-- Omega -->
+          <a href="Product.dc.html?p=omega" class="stack-card reveal reveal-d3">
+            <div class="stack-card-img">
+              <img src="assets/omega.webp" alt="Omega 3+ Fish Oil" loading="lazy">
+            </div>
+            <div class="stack-card-body">
+              <span class="stack-card-kicker">Daily health</span>
+              <span class="stack-card-name">Omega 3+ Fish Oil</span>
+              <span class="stack-card-desc">EPA 180mg + DHA 120mg. 100 softgels.</span>
+              <span class="stack-card-footer">
+                <span class="stack-card-price">Price TBC</span>
+                <span class="stack-card-cta">Shop →</span>
+              </span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+     SECTION 9 — COMPARE TABLE (Dark band)
+     ============================================================ -->
+    <section class="dark-band" id="compare">
+      <div class="compare-inner reveal">
+        <div class="dark-band-header">
+          <span class="eyebrow eyebrow--cyan" style="letter-spacing:0.16em">Choose your format</span>
+          <h2 class="heading-section-lg" style="font-size:clamp(26px,3.2vw,40px);line-height:1.08;text-wrap:balance">
+            Which device is right for you?</h2>
+          <p style="font-size:14px;line-height:1.55;color:var(--steel);max-width:460px">Same BYND+ standard. Different
+            coverage. Pick the one that fits your space and routine.</p>
+        </div>
+        <div class="compare-grid">
+          <!-- Precision mini -->
+          <div class="compare-card">
+            <div class="compare-card-img">
+              <img src="assets/precision-mini.webp" alt="Precision (mini)" loading="lazy">
+            </div>
+            <div class="compare-card-meta">
+              <span class="compare-card-kicker">Targeted</span>
+              <span class="compare-card-name">Precision (mini)</span>
+              <span class="compare-card-price">$3,500.00</span>
+            </div>
+            <div class="compare-rows">
+              <div class="compare-row">
+                <span class="compare-row-label">Format</span>
+                <span class="compare-row-value"><span class="compare-mark compare-mark--yes">✓</span>Desktop,
+                  stand-mounted</span>
+              </div>
+              <div class="compare-row">
+                <span class="compare-row-label">Coverage</span>
+                <span class="compare-row-value"><span class="compare-mark compare-mark--yes">✓</span>Targeted
+                  areas</span>
+              </div>
+              <div class="compare-row">
+                <span class="compare-row-label">Ideal space</span>
+                <span class="compare-row-value"><span class="compare-mark compare-mark--yes">✓</span>Desk, counter,
+                  nightstand</span>
+              </div>
+              <div class="compare-row">
+                <span class="compare-row-label">Full-body sessions</span>
+                <span class="compare-row-value"><span class="compare-mark compare-mark--no">—</span>Not designed
+                  for</span>
+              </div>
+              <div class="compare-row">
+                <span class="compare-row-label">In the 90-Day Protocol</span>
+                <span class="compare-row-value"><span class="compare-mark compare-mark--no">—</span>Sold
+                  separately</span>
+              </div>
+            </div>
+            <div class="compare-cta">
+              <a href="Product.dc.html?p=mini" class="btn btn--white">Shop the mini</a>
+            </div>
+          </div>
+          <!-- Elite -->
+          <div class="compare-card compare-card--highlight">
+            <span class="compare-flag">Most complete</span>
+            <div class="compare-card-img">
+              <img src="assets/elite-full-body.webp" alt="BYND+ Elite (Full Body System)" loading="lazy">
+            </div>
+            <div class="compare-card-meta">
+              <span class="compare-card-kicker">Full body</span>
+              <span class="compare-card-name">Elite (Full Body System)</span>
+              <span class="compare-card-price">$6,000.00</span>
+            </div>
+            <div class="compare-rows">
+              <div class="compare-row">
+                <span class="compare-row-label">Format</span>
+                <span class="compare-row-value"><span class="compare-mark compare-mark--yes">✓</span>Freestanding, full
+                  height</span>
+              </div>
+              <div class="compare-row">
+                <span class="compare-row-label">Coverage</span>
+                <span class="compare-row-value"><span class="compare-mark compare-mark--yes">✓</span>Full body</span>
+              </div>
+              <div class="compare-row">
+                <span class="compare-row-label">Ideal space</span>
+                <span class="compare-row-value"><span class="compare-mark compare-mark--yes">✓</span>Home gym, bedroom,
+                  studio</span>
+              </div>
+              <div class="compare-row">
+                <span class="compare-row-label">Full-body sessions</span>
+                <span class="compare-row-value"><span class="compare-mark compare-mark--yes">✓</span>Designed for</span>
+              </div>
+              <div class="compare-row">
+                <span class="compare-row-label">In the 90-Day Protocol</span>
+                <span class="compare-row-value"><span class="compare-mark compare-mark--yes">✓</span>Included</span>
+              </div>
+            </div>
+            <div class="compare-cta compare-cta--accent">
+              <a href="Product.dc.html?p=elite" class="btn btn--accent">Shop the Elite</a>
+            </div>
+          </div>
+        </div>
+        <!-- Protocol callout -->
+        <a href="Product.dc.html?p=protocol" class="protocol-callout">
+          <span class="protocol-callout-left">
+            <span class="protocol-callout-thumb">
+              <img src="assets/protocol-bundle.webp" alt="">
+            </span>
+            <span class="protocol-callout-text">
+              <span class="protocol-callout-title">Want light and fuel together?</span>
+              <span class="protocol-callout-sub">The 90-Day Protocol pairs the Elite with the full supplement
+                stack.</span>
+            </span>
+          </span>
+          <span class="protocol-callout-arrow">View the protocol →</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============================================================
+     SECTION 10 — PHILOSOPHY
+     ============================================================ -->
+    <section class="philosophy reveal" id="philosophy">
+      <div class="philosophy-card">
+        <div class="philosophy-media">
+          <img src="assets/whey-float.webp" alt="BYND Premium Whey Protein" loading="lazy">
+        </div>
+        <div class="philosophy-content">
+          <span class="eyebrow">Philosophy</span>
+          <p class="philosophy-quote">Your body is the most advanced system you'll ever own. <span
+              class="philosophy-quote-sub">We build the tools to maintain it.</span></p>
+          <a href="Product.dc.html?p=protocol" class="btn btn--primary" style="align-self:flex-start">See the 90-day
+            protocol</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+     SECTION 11 — FAQ
+     ============================================================ -->
+    <section class="faq-section" id="faq">
+      <div class="faq-inner reveal">
+        <h2 class="heading-section faq-heading">Frequently asked questions</h2>
+        <div class="accordion-list" id="faq-accordion">
+          <div class="accordion-item" data-accordion="faq">
+            <button class="accordion-trigger">
+              What's included in the 90-Day Red Light Reset Protocol?
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-panel">
+              <p class="accordion-panel-inner">The protocol pairs the BYND+ Elite Red Light (Full Body System) with the
+                BYND supplement range: Premium Whey Protein, Creatine Monohydrate, Platinum Mobility+ and Omega 3+.</p>
+            </div>
+          </div>
+          <div class="accordion-item" data-accordion="faq">
+            <button class="accordion-trigger">
+              What is the difference between the Precision (mini) and the Elite?
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-panel">
+              <p class="accordion-panel-inner">The Precision (mini) is a compact, stand-mounted panel for targeted
+                sessions. The Elite is a freestanding, full-height panel designed for full-body sessions.</p>
+            </div>
+          </div>
+          <div class="accordion-item" data-accordion="faq">
+            <button class="accordion-trigger">
+              How do I prepare Premium Whey Protein?
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-panel">
+              <p class="accordion-panel-inner">Mix two scoops with 8–12 oz of cold water. Each serving contains 22 grams
+                of protein from whey protein isolate and concentrate.</p>
+            </div>
+          </div>
+          <div class="accordion-item" data-accordion="faq">
+            <button class="accordion-trigger">
+              Can I subscribe to supplements?
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-panel">
+              <p class="accordion-panel-inner">Yes — choose Subscribe &amp; save on any supplement product page and pick
+                your delivery frequency. Pause or cancel anytime.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+     FOOTER
+     ============================================================ -->
+  <footer class="site-footer" id="site-footer">
+    <!-- Newsletter -->
+    <div class="footer-newsletter">
+      <div class="footer-newsletter-inner">
+        <div class="footer-newsletter-text">
+          <h3 class="footer-newsletter-title">New releases, protocols and early access.</h3>
+          <p style="font-size:14px;line-height:1.6;color:var(--steel)">Subscribe to stay updated on new releases and
+            exclusive offers. Be the first to know what's next.</p>
+        </div>
+        <div class="footer-newsletter-form">
+          <div class="footer-newsletter-row">
+            <input type="email" class="footer-newsletter-input" placeholder="Email address" id="newsletter-email">
+            <button class="footer-newsletter-btn" id="newsletter-btn">Sign up</button>
+          </div>
+          <span style="font-size:11px;color:var(--silver)" id="newsletter-msg">Unsubscribe anytime.</span>
+        </div>
+      </div>
+    </div>
+    <!-- Main footer -->
+    <div class="footer-main">
+      <div class="footer-main-inner">
+        <div class="footer-columns">
+          <div class="footer-brand">
+            <img src="assets/bynd-human-logo.png" alt="BYND Human" loading="lazy">
+            <p class="footer-brand-desc">Red light therapy devices and premium daily supplements, built for the human
+              you're becoming.</p>
+            <div class="footer-social">
+              <a href="#" aria-label="Instagram">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                  <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                  <circle cx="12" cy="12" r="4"></circle>
+                  <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"></circle>
+                </svg>
+              </a>
+              <a href="#" aria-label="TikTok">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                  <path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"></path>
+                  <path d="M14 3c.5 3 2.5 4.8 5.5 5"></path>
+                </svg>
+              </a>
+              <a href="#" aria-label="YouTube">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                  <rect x="2.5" y="5.5" width="19" height="13" rx="4"></rect>
+                  <path d="M10 9.5v5l4.5-2.5z" fill="currentColor"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="footer-links-area">
+            <div class="footer-col">
+              <span class="footer-col-title">Products</span>
+              <a href="Collection.dc.html">All Products</a>
+              <a href="Red%20Light%20Therapy.dc.html">Red Light Therapy</a>
+              <a href="Collection.dc.html?c=supplements">Supplements</a>
+              <a href="Product.dc.html?p=protocol">90-Day Protocol</a>
+            </div>
+            <div class="footer-col">
+              <span class="footer-col-title">Science</span>
+              <a href="Red%20Light%20Therapy.dc.html#how">How Red Light Works</a>
+              <a href="Red%20Light%20Therapy.dc.html#routine">Using Your Device</a>
+              <a href="Product.dc.html?p=whey">Supplement Facts</a>
+            </div>
+            <div class="footer-col">
+              <span class="footer-col-title">About</span>
+              <a href="OurStory.html">Our Story</a>
+              <a href="BYND Human Website - Review.dc.html">Journal</a>
+              <a href="BYND Human Website - Review.dc.html">Reviews</a>
+            </div>
+            <div class="footer-col">
+              <span class="footer-col-title">Support</span>
+              <a href="Contact.html">Contact Us</a>
+              <a href="ShippingPolicy.html">Shipping</a>
+              <a href="ReturnsRefunds.html">Returns &amp; Refunds</a>
+              <a href="Warranty.html">Warranty</a>
+            </div>
+          </div>
+        </div>
+        <!-- Trust + Payments -->
+        <div class="footer-trust-row">
+          <div class="footer-trust-items">
+            <span class="footer-trust-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00E3FF" stroke-width="1.6">
+                <path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"></path>
+                <path d="M9 12l2 2 4-4"></path>
+              </svg>
+              Quality guaranteed
+            </span>
+            <span class="footer-trust-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00E3FF" stroke-width="1.6">
+                <path d="M3 7h11v10H3zM14 10h4l3 3v4h-7"></path>
+                <circle cx="7" cy="18" r="1.6"></circle>
+                <circle cx="17" cy="18" r="1.6"></circle>
+              </svg>
+              Tracked shipping
+            </span>
+            <span class="footer-trust-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00E3FF" stroke-width="1.6">
+                <path d="M4 5h16v11H8l-4 4z"></path>
+              </svg>
+              Real human support
+            </span>
+            <span class="footer-trust-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00E3FF" stroke-width="1.6">
+                <rect x="4" y="10" width="16" height="11" rx="2"></rect>
+                <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
+              </svg>
+              Secure checkout
+            </span>
+          </div>
+          <div class="footer-payments-bottom">
+            <span class="footer-payment"
+              style="background:#fff;color:#1A1F71;font-size:11px;font-style:italic">VISA</span>
+            <span class="footer-payment" style="background:#fff"><span
+                style="width:12px;height:12px;border-radius:50%;background:#EB001B"></span><span
+                style="width:12px;height:12px;border-radius:50%;background:#F79E1B;margin-left:-5px;opacity:0.9"></span></span>
+            <span class="footer-payment" style="background:#2E77BC;color:#fff;font-size:9px">AMEX</span>
+            <span class="footer-payment"
+              style="background:#fff;color:#003087;font-size:9px;font-style:italic">PayPal</span>
+            <span class="footer-payment"
+              style="background:#5A31F4;color:#fff;font-size:9px;font-style:italic">shop</span>
+            <span class="footer-payment" style="background:#fff;color:#0A0E12;font-size:9px;font-weight:700">⌁Pay</span>
+            <span class="footer-payment" style="background:#fff;color:#3C4043;font-size:9px;font-weight:700">G
+              Pay</span>
+          </div>
+        </div>
+        <!-- Disclaimer -->
+        <p class="footer-disclaimer">*These statements have not been evaluated by the Food and Drug Administration.
+          These products are not intended to diagnose, treat, cure, or prevent any disease. The information on this
+          website is for general informational purposes only and is not a substitute for professional medical advice.
+          Consult your healthcare provider before starting any new supplement or wellness routine.</p>
+        <!-- Legal -->
+        <div class="footer-legal">
+          <span>© 2026 BYND Human. All rights reserved.</span>
+          <span class="footer-legal-links">
+            <a href="PrivacyPolicy.html">Privacy</a>
+            <a href="Terms.html">Terms</a>
+            <a href="ReturnsRefunds.html">Refunds</a>
+            <a href="ShippingPolicy.html">Shipping</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
+
+  <script src="js/store.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

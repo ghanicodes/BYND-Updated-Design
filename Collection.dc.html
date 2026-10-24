@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<script src="./js/store.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="./image-slot.js"></script>
+  <style>
+    html,body{margin:0;background:#FFFFFF;-webkit-font-smoothing:antialiased}
+    *{box-sizing:border-box}
+    a{color:#0A0E12;text-decoration:none}
+    a:hover{color:#009CFF}
+    ::-webkit-scrollbar{height:0;width:0}
+  </style>
+</helmet>
+<div style="background:#FFFFFF;color:#0A0E12;font-family:'Montserrat',sans-serif;min-height:100vh;overflow-x:clip">
+  <dc-import name="SiteHeader" style="position:sticky;top:0;z-index:50" active="shop" hint-size="100%,100px"></dc-import>
+
+  <section data-screen-label="Collection · Title" style="background:#E7EEF4;padding:clamp(40px,5vw,64px) 0">
+    <div style="width:min(100% - (var(--gutter, 32px) * 2), 760px);margin:0 auto;display:flex;flex-direction:column;gap:14px;align-items:center;text-align:center;box-sizing:border-box">
+      <span style="font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#5A636C">{{ eyebrow }}</span>
+      <h1 style="margin:0;font-size:clamp(34px,5vw,64px);font-weight:600;line-height:1.04;letter-spacing:-0.035em">{{ title }}</h1>
+      <p style="margin:0;font-size:15px;line-height:1.7;color:#34383D;max-width:520px">{{ intro }}</p>
+    </div>
+  </section>
+
+  <section data-screen-label="Collection · Categories" style="padding:clamp(24px,3vw,36px) 0 0">
+    <div style="width:min(100% - (var(--gutter, 32px) * 2), var(--max-w, 1260px));margin:0 auto;padding:0;box-sizing:border-box">
+      <div style="display:grid;grid-auto-flow:column;grid-auto-columns:minmax(220px,1fr);gap:12px;overflow-x:auto;padding:0">
+        <sc-for list="{{ tiles }}" as="t" hint-placeholder-count="3">
+          <button onClick="{{ t.pick }}" style="position:relative;aspect-ratio:16/10;border-radius:10px;overflow:hidden;background:transparent;border:0;padding:0;cursor:pointer;text-align:left;font-family:'Montserrat',sans-serif">
+            <span style="{{ t.imgStyle }}"></span>
+            <span style="position:absolute;left:14px;bottom:14px;display:flex;flex-direction:column;gap:2px;padding:10px 14px;border-radius:8px;background:rgba(255,255,255,0.92)"><span style="font-size:14px;font-weight:600;color:#0A0E12">{{ t.label }}</span><span style="font-size:11px;color:#5A636C">{{ t.count }}</span></span>
+          </button>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Collection · Grid" style="padding:clamp(24px,3.5vw,44px) 0 clamp(48px,6vw,80px)">
+    <div style="width:min(100% - (var(--gutter, 32px) * 2), var(--max-w, 1260px));margin:0 auto;display:flex;flex-direction:column;gap:24px;box-sizing:border-box">
+      <div style="position:sticky;top:100px;z-index:5;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);margin:0;padding:12px 0;border-bottom:1px solid #E3E8ED;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;width:100%">
+        <div style="display:flex;gap:8px;overflow-x:auto;max-width:100%">
+          <sc-for list="{{ chips }}" as="c" hint-placeholder-count="4">
+            <button onClick="{{ c.pick }}" style="{{ c.style }}">{{ c.label }}</button>
+          </sc-for>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;font-size:13px;color:#5A636C">
+          <span>{{ countLabel }}</span>
+          <select onChange="{{ onSort }}" value="{{ sort }}" style="height:38px;padding:0 34px 0 14px;border-radius:999px;border:1px solid #C9D2DA;background:#FFFFFF;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;color:#0A0E12;appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,#0A0E12 50%),linear-gradient(135deg,#0A0E12 50%,transparent 50%);background-position:calc(100% - 18px) 16px,calc(100% - 13px) 16px;background-size:5px 5px;background-repeat:no-repeat;cursor:pointer">
+            <option value="featured">Sort: Featured</option>
+            <option value="low">Price: low to high</option>
+            <option value="high">Price: high to low</option>
+          </select>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(clamp(150px,21vw,290px),1fr));gap:clamp(24px,3vw,40px) clamp(12px,1.6vw,20px)">
+        <sc-for list="{{ items }}" as="p" hint-placeholder-count="8">
+          <div style="display:flex;flex-direction:column;gap:12px;min-width:0;height:100%">
+            <a href="{{ p.href }}" style="position:relative;aspect-ratio:1/1;border-radius:8px;background:#F1F4F7;overflow:hidden;display:block">
+              <sc-if value="{{ p.imgStyle }}" hint-placeholder-val="{{ true }}"><span style="{{ p.imgStyle }}"></span></sc-if>
+              <sc-if value="{{ p.noImg }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;inset:0;color:#8A939C"><image-slot id="{{ p.slot }}" shape="rect" placeholder="{{ p.slotLabel }}"></image-slot></span></sc-if>
+              <sc-if value="{{ p.badge }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;top:10px;left:10px;padding:5px 10px;border-radius:999px;background:#FFFFFF;font-size:10px;font-weight:600;color:#34383D">{{ p.badge }}</span></sc-if>
+            </a>
+            <div style="display:flex;flex-direction:column;gap:4px;flex:1">
+              <span style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#5A636C">{{ p.tags }}</span>
+              <a href="{{ p.href }}" style="font-size:14px;font-weight:600;line-height:1.35;min-height:2.7em;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">{{ p.name }}</a>
+              <sc-if value="{{ p.swatches }}" hint-placeholder-val="{{ false }}">
+                <span style="display:flex;gap:6px;padding-top:4px"><span title="Vanilla Ice Cream" style="width:14px;height:14px;border-radius:50%;background:#EFE3C2;border:1px solid #C9D2DA"></span><span title="Chocolate Cake" style="width:14px;height:14px;border-radius:50%;background:#5B3A29;border:1px solid #C9D2DA"></span></span>
+              </sc-if>
+            </div>
+            <a href="{{ p.href }}" style="{{ p.ctaStyle }};margin-top:auto">{{ p.cta }}</a>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Collection · Protocol promo" style="padding:0 0 clamp(48px,6vw,80px)">
+    <div style="width:min(100% - (var(--gutter, 32px) * 2), var(--max-w, 1260px));margin:0 auto;border-radius:14px;overflow:hidden;background:#0A0E12;color:#FFFFFF;display:flex;flex-wrap:wrap;align-items:center;box-sizing:border-box">
+      <div style="flex:1 1 380px;min-width:0;padding:clamp(28px,4.5vw,64px);display:flex;flex-direction:column;gap:16px">
+        <span style="font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#00E3FF">Build your protocol</span>
+        <h2 style="margin:0;font-size:clamp(26px,3.4vw,44px);font-weight:600;line-height:1.08;letter-spacing:-0.03em;text-wrap:balance">Light and fuel, in one 90-day system.</h2>
+        <a href="Product.dc.html?p=protocol" style="align-self:flex-start;height:48px;padding:0 26px;border-radius:999px;background:#FFFFFF;color:#0A0E12;font-weight:600;font-size:14px;display:flex;align-items:center;margin-top:6px">View the protocol</a>
+      </div>
+      <div style="flex:1 1 320px;min-width:0;padding:0 clamp(20px,3vw,40px) clamp(20px,3vw,40px);padding-top:clamp(0px,3vw,40px)"><div style="aspect-ratio:16/10;border-radius:10px;background:#FFFFFF;position:relative;overflow:hidden"><img src="assets/protocol-bundle.webp" alt="BYND+ 90-Day Protocol" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:3%"></div></div>
+    </div>
+  </section>
+
+  <dc-import name="SiteFooter" hint-size="100%,640px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  constructor(p) {
+    super(p);
+    let c = 'all';
+    try { const q = new URLSearchParams(window.location.search).get('c'); if (['rlt', 'supps', 'supplements', 'protocol'].includes(q)) c = q === 'supplements' ? 'supps' : q; } catch (e) {}
+    this.state = { cat: c, sort: 'featured' };
+  }
+  renderVals() {
+    const tile = (url, size, pos) => ({ position: 'absolute', inset: 0, backgroundImage: `url(${url})`, backgroundSize: size, backgroundPosition: pos, backgroundRepeat: 'no-repeat', mixBlendMode: 'multiply' });
+    const btnDark = { height: 40, borderRadius: 999, background: '#0A0E12', color: '#FFFFFF', fontSize: 12, fontWeight: 600, display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '0 10px' };
+    const btnLine = { ...btnDark, background: 'transparent', color: '#5A636C', border: '1px solid #C9D2DA' };
+    const all = [
+      { cat: 'rlt', name: 'BYND+ Elite Red Light (Full Body System)', tags: 'Red light · Full body', price: 6000, badge: 'In stock', cta: 'Add to cart · $6,000.00', href: 'Product.dc.html?p=elite', imgStyle: tile('assets/elite-full-body.webp', 'contain', '50% 50%') },
+      { cat: 'rlt', name: 'BYND+ Precision Red Light (mini)', tags: 'Red light · Targeted', price: 3500, badge: 'In stock', cta: 'Add to cart · $3,500.00', href: 'Product.dc.html?p=mini', imgStyle: tile('assets/precision-mini.webp', 'cover', '50% 50%') },
+      { cat: 'protocol', name: 'BYND+ Elite 90-Day Red Light Reset Protocol', tags: 'Device + supplements', price: null, badge: 'Bundle', cta: 'View protocol', href: 'Product.dc.html?p=protocol', imgStyle: tile('assets/protocol-bundle.webp', '90%', '50% 50%') },
+      { cat: 'supps', name: 'Premium Whey Protein', tags: 'Recovery · 2 flavours', price: 55, swatches: true, badge: 'Best seller', cta: 'Add to cart · $55.00', href: 'Product.dc.html?p=whey', imgStyle: tile('assets/whey-vanilla.webp', 'cover', '50% 50%') },
+      { cat: 'supps', name: 'Creatine Monohydrate', tags: 'Strength · 250 g', price: null, badge: 'In stock', cta: 'Add to cart', href: 'Product.dc.html?p=creatine', imgStyle: tile('assets/creatine.webp', 'cover', '50% 50%') },
+      { cat: 'supps', name: 'Platinum Mobility+', tags: 'Mobility · 60 capsules', price: null, badge: 'In stock', cta: 'Add to cart', href: 'Product.dc.html?p=mobility', imgStyle: tile('assets/mobility.webp', 'cover', '50% 50%') },
+      { cat: 'supps', name: 'Omega 3+ Fish Oil', tags: 'Daily health · 100 softgels', price: null, badge: 'In stock', cta: 'Add to cart', href: 'Product.dc.html?p=omega', imgStyle: tile('assets/omega.webp', 'contain', '50% 50%') }
+    ].map(p => ({ ...p, ctaStyle: p.sold ? btnLine : btnDark }));
+    const meta = {
+      all: ['Shop all', 'The BYND collection.', 'Red light therapy devices, daily supplements and the protocol that brings them together.'],
+      rlt: ['Collection', 'Red Light Therapy', 'Targeted and full-body BYND+ devices, designed for home use.'],
+      supps: ['Collection', 'Supplements', 'Protein, creatine, mobility and omega support for daily nutrition.'],
+      protocol: ['Collection', 'Protocols', 'Devices and supplements, combined into one structured routine.']
+    }[this.state.cat];
+    let items = all.filter(p => this.state.cat === 'all' || p.cat === this.state.cat);
+    if (this.state.sort !== 'featured') {
+      const dir = this.state.sort === 'low' ? 1 : -1;
+      items = [...items].sort((a, b) => (a.price == null) - (b.price == null) || dir * ((a.price || 0) - (b.price || 0)));
+    }
+    const cats = [['all', 'All'], ['rlt', 'Red Light'], ['supps', 'Supplements'], ['protocol', 'Protocols']];
+    const chip = on => ({ height: 38, padding: '0 16px', borderRadius: 999, border: on ? '1px solid #0A0E12' : '1px solid #C9D2DA', background: on ? '#0A0E12' : '#FFFFFF', color: on ? '#FFFFFF' : '#0A0E12', fontFamily: "'Montserrat',sans-serif", fontSize: 12, fontWeight: 600, whiteSpace: 'nowrap', cursor: 'pointer', flexShrink: 0 });
+    const pick = k => () => this.setState({ cat: k });
+    return {
+      eyebrow: meta[0], title: meta[1], intro: meta[2],
+      chips: cats.map(([k, l]) => ({ label: l, style: chip(this.state.cat === k), pick: pick(k) })),
+     tiles: [
+  { label: 'Red Light Therapy', count: '2 devices', pick: pick('rlt'), imgStyle: tile('assets/precision-mini.webp', 'contain', 'center') },
+  { label: 'Supplements', count: '4 products', pick: pick('supps'), imgStyle: tile('assets/whey-duo.webp', 'contain', 'center') },
+  { label: 'Protocols', count: '1 system', pick: pick('protocol'), imgStyle: tile('assets/protocol-bundle.webp', 'contain', 'center') }
+],
+      items, countLabel: items.length + (items.length === 1 ? ' product' : ' products'),
+      sort: this.state.sort, onSort: e => this.setState({ sort: e.target.value })
+    };
+  }
+}
+</script>
+</body>
+</html>

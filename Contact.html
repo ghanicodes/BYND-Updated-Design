@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Us — BYND Human</title>
+  <meta name="description"
+    content="Contact the BYND Human team for red light device guidance, protocol questions, orders, and customer support.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress" id="scroll-progress"></div>
+
+  <!-- ============================================================
+     ANNOUNCEMENT BAR + SITE HEADER
+     ============================================================ -->
+  <div id="site-header-wrap" style="position:sticky;top:0;z-index:100">
+    <div class="announcement">
+      Now available — the BYND+ Elite 90-Day Red Light Reset Protocol. <a href="Product.dc.html?p=protocol">Shop now</a>
+    </div>
+    <header class="site-header" id="site-header">
+      <div class="header-inner">
+        <button class="menu-toggle" id="menu-toggle" aria-label="Menu">
+          <span class="menu-icon-open"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.6">
+              <path d="M3 7h18M3 12h18M3 17h12"></path>
+            </svg></span>
+          <span class="menu-icon-close"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.6">
+              <path d="M6 6l12 12M6 18L18 6"></path>
+            </svg></span>
+        </button>
+        <a href="index.html" class="header-logo"><img src="assets/bynd-plus-mark.png" alt="BYND+" loading="eager"></a>
+        <nav class="header-nav" id="header-nav">
+          <a href="Red%20Light%20Therapy.dc.html">Red Light Therapy</a>
+          <a href="Collection.dc.html?c=supplements">Supplements</a>
+          <a href="Product.dc.html?p=protocol">90-Day Protocol</a>
+          <a href="Collection.dc.html">Shop All</a>
+          <a href="Contact.html" class="active">Contact</a>
+        </nav>
+        <div class="header-actions">
+          <button type="button" class="header-icon" id="search-toggle" aria-label="Search">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <circle cx="11" cy="11" r="7"></circle>
+              <path d="M20 20l-4-4"></path>
+            </svg>
+          </button>
+          <a href="Product.dc.html?p=protocol" class="header-icon header-icon--account" aria-label="Account">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <circle cx="12" cy="8" r="4"></circle>
+              <path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"></path>
+            </svg>
+          </a>
+          <button type="button" class="header-icon" id="cart-toggle" aria-label="Cart">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M5 8h14l-1.2 12H6.2L5 8z"></path>
+              <path d="M9 8V6a3 3 0 0 1 6 0v2"></path>
+            </svg>
+            <span class="cart-count">0</span>
+          </button>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="Red%20Light%20Therapy.dc.html" class="mobile-nav-link">Red Light Therapy <span>→</span></a>
+    <a href="Collection.dc.html?c=supplements" class="mobile-nav-link">Supplements <span>→</span></a>
+    <a href="Product.dc.html?p=protocol" class="mobile-nav-link">90-Day Protocol <span>→</span></a>
+    <a href="Collection.dc.html" class="mobile-nav-link">Shop All <span>→</span></a>
+    <a href="Contact.html" class="mobile-nav-link active">Contact <span>→</span></a>
+    <div class="mobile-nav-ctas">
+      <a href="Red%20Light%20Therapy.dc.html" class="btn btn--primary" style="width:100%;justify-content:center">Shop
+        red light</a>
+      <a href="Product.dc.html?p=protocol" class="btn btn--outline"
+        style="width:100%;justify-content:center">Account</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- ============================================================
+       CONTACT HERO
+       ============================================================ -->
+    <section class="contact-hero">
+      <div class="container">
+        <div class="contact-hero-inner reveal">
+          <span class="contact-eyebrow">Support &amp; Advisory</span>
+          <h1 class="contact-title">Direct support, human to human.</h1>
+          <p class="contact-sub">
+            Have questions regarding our photobiomodulation devices, daily supplement formulas, or order fulfillment?
+            Our specialized client team is here to assist.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+       CONTACT MAIN CONTENT (INFO + FORM)
+       ============================================================ -->
+    <section class="contact-main">
+      <div class="container">
+        <div class="contact-grid">
+
+          <!-- Left Column: Support Cards -->
+          <div class="contact-info-col reveal">
+            <!-- Card 1 -->
+            <div class="contact-support-card">
+              <div class="contact-card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <circle cx="12" cy="12" r="5"></circle>
+                  <line x1="12" y1="1" x2="12" y2="3"></line>
+                  <line x1="12" y1="21" x2="12" y2="23"></line>
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                  <line x1="1" y1="12" x2="3" y2="12"></line>
+                  <line x1="21" y1="12" x2="23" y2="12"></line>
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+              </div>
+              <h3 class="contact-card-title">Device &amp; Protocol Advisory</h3>
+              <p class="contact-card-body">
+                Need guidance selecting between the Elite Full Body System and Precision Mini, or recommendations on session timing and distance? Our protocol specialists are on hand.
+              </p>
+              <div class="contact-card-meta">
+                <span>Personalized routine recommendations</span>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="contact-support-card">
+              <div class="contact-card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <rect x="1" y="3" width="15" height="13"></rect>
+                  <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                  <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                  <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                </svg>
+              </div>
+              <h3 class="contact-card-title">Order Fulfillment &amp; Logistics</h3>
+              <p class="contact-card-body">
+                Inquiries regarding tracked shipping, international customs, address updates, or delivery status across North America and select international destinations.
+              </p>
+              <div class="contact-card-meta">
+                <span>Real-time courier updates provided</span>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="contact-support-card">
+              <div class="contact-card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+              <h3 class="contact-card-title">Warranty &amp; Hardware Support</h3>
+              <p class="contact-card-body">
+                All BYND+ red light devices include comprehensive manufacturer warranty coverage. Contact our technical team for device setup, diagnostics, or replacement service.
+              </p>
+              <div class="contact-card-meta">
+                <span>Dedicated hardware support</span>
+              </div>
+            </div>
+
+            <!-- Card 4 (Response Time Commitment) -->
+            <div class="contact-support-card" style="background:var(--ice-light);border-color:var(--mist)">
+              <div class="contact-card-icon" style="background:var(--carbon);color:var(--cyan)">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <h3 class="contact-card-title">Response Commitment</h3>
+              <p class="contact-card-body">
+                Our support team typically responds to all client submissions within <strong>24–48 business hours</strong>. Messages received over weekends are prioritized on the next business day.
+              </p>
+              <div class="contact-card-meta" style="color:var(--slate)">
+                <span>Direct email: support@byndhuman.com</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Contact Form -->
+          <div class="contact-form-card reveal">
+            <h2 class="contact-form-title">Send us a message</h2>
+            <p class="contact-form-subtitle">
+              Please share your details below. A dedicated BYND Human advisor will review your inquiry and follow up promptly.
+            </p>
+
+            <!-- User Feedback Alert -->
+            <div class="form-feedback-alert" id="contact-feedback-alert">
+              <div class="feedback-alert-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+              </div>
+              <div class="feedback-alert-text">
+                <div class="feedback-alert-title" id="feedback-alert-title">Thank you! Message received.</div>
+                <div id="feedback-alert-body">Your message has been safely logged. An advisor will get back to you shortly.</div>
+              </div>
+            </div>
+
+            <form class="contact-form" id="contact-form" novalidate>
+              <!-- Name & Email Row -->
+              <div class="form-row">
+                <div class="form-group" id="group-name">
+                  <label class="form-label" for="contact-name">
+                    Full Name <span class="required">*</span>
+                  </label>
+                  <input type="text" id="contact-name" class="form-control" placeholder="e.g. Alex Morgan" required>
+                  <span class="form-error-msg">Please enter your full name.</span>
+                </div>
+
+                <div class="form-group" id="group-email">
+                  <label class="form-label" for="contact-email">
+                    Email Address <span class="required">*</span>
+                  </label>
+                  <input type="email" id="contact-email" class="form-control" placeholder="alex@example.com" required>
+                  <span class="form-error-msg">Please enter a valid email address.</span>
+                </div>
+              </div>
+
+              <!-- Subject & Order Number Row -->
+              <div class="form-row">
+                <div class="form-group" id="group-subject">
+                  <label class="form-label" for="contact-subject">
+                    Subject / Topic <span class="required">*</span>
+                  </label>
+                  <select id="contact-subject" class="form-control" required>
+                    <option value="" disabled selected>Select an inquiry type</option>
+                    <option value="Product & Protocol Advice">Product &amp; Protocol Advisory</option>
+                    <option value="Order & Shipping Status">Order &amp; Shipping Status</option>
+                    <option value="Device Setup & Warranty">Device Setup &amp; Warranty</option>
+                    <option value="Supplement Ingredients & Nutrition">Supplement Ingredients &amp; Nutrition</option>
+                    <option value="Wholesale & Partnerships">Wholesale &amp; Partnerships</option>
+                    <option value="General Question">General Question</option>
+                  </select>
+                  <span class="form-error-msg">Please select an inquiry topic.</span>
+                </div>
+
+                <div class="form-group" id="group-order">
+                  <label class="form-label" for="contact-order">
+                    Order Number <span style="font-weight:400;color:var(--silver)">(optional)</span>
+                  </label>
+                  <input type="text" id="contact-order" class="form-control" placeholder="e.g. #BYND-10482">
+                </div>
+              </div>
+
+              <!-- Message Field -->
+              <div class="form-group" id="group-message">
+                <label class="form-label" for="contact-message">
+                  Message <span class="required">*</span>
+                </label>
+                <textarea id="contact-message" class="form-control" placeholder="How can our team help you?" required></textarea>
+                <span class="form-error-msg">Please provide your message (at least 10 characters).</span>
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit" class="form-submit-btn" id="contact-submit-btn">
+                <span>Submit message</span>
+                <span class="btn-arrow">→</span>
+              </button>
+
+              <p style="font-size:11.5px;color:var(--silver);line-height:1.5;margin-top:6px">
+                By submitting this form, you agree to our <a href="#" style="color:var(--slate);text-decoration:underline">Privacy Policy</a>. Your personal data is kept confidential and is never shared.
+              </p>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+     SITE FOOTER
+     ============================================================ -->
+  <footer class="site-footer" id="site-footer">
+    <!-- Newsletter -->
+    <div class="footer-newsletter">
+      <div class="footer-newsletter-inner">
+        <div class="footer-newsletter-text">
+          <h3 class="footer-newsletter-title">New releases, protocols and early access.</h3>
+          <p style="font-size:14px;line-height:1.6;color:var(--steel)">Subscribe to stay updated on new releases and
+            exclusive offers. Be the first to know what's next.</p>
+        </div>
+        <div class="footer-newsletter-form">
+          <div class="footer-newsletter-row">
+            <input type="email" class="footer-newsletter-input" placeholder="Email address" id="newsletter-email">
+            <button class="footer-newsletter-btn" id="newsletter-btn">Sign up</button>
+          </div>
+          <span style="font-size:11px;color:var(--silver)" id="newsletter-msg">Unsubscribe anytime.</span>
+        </div>
+      </div>
+    </div>
+    <!-- Main footer -->
+    <div class="footer-main">
+      <div class="footer-main-inner">
+        <div class="footer-columns">
+          <div class="footer-brand">
+            <img src="assets/bynd-human-logo.png" alt="BYND Human" loading="lazy">
+            <p class="footer-brand-desc">Red light therapy devices and premium daily supplements, built for the human
+              you're becoming.</p>
+            <div class="footer-social">
+              <a href="#" aria-label="Instagram">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                  <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                  <circle cx="12" cy="12" r="4"></circle>
+                  <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"></circle>
+                </svg>
+              </a>
+              <a href="#" aria-label="TikTok">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                  <path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"></path>
+                  <path d="M14 3c.5 3 2.5 4.8 5.5 5"></path>
+                </svg>
+              </a>
+              <a href="#" aria-label="YouTube">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                  <rect x="2.5" y="5.5" width="19" height="13" rx="4"></rect>
+                  <path d="M10 9.5v5l4.5-2.5z" fill="currentColor"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="footer-links-area">
+            <div class="footer-col">
+              <span class="footer-col-title">Products</span>
+              <a href="Collection.dc.html">All Products</a>
+              <a href="Red%20Light%20Therapy.dc.html">Red Light Therapy</a>
+              <a href="Collection.dc.html?c=supplements">Supplements</a>
+              <a href="Product.dc.html?p=protocol">90-Day Protocol</a>
+            </div>
+            <div class="footer-col">
+              <span class="footer-col-title">Science</span>
+              <a href="Red%20Light%20Therapy.dc.html#how">How Red Light Works</a>
+              <a href="Red%20Light%20Therapy.dc.html#routine">Using Your Device</a>
+              <a href="Product.dc.html?p=whey">Supplement Facts</a>
+            </div>
+            <div class="footer-col">
+              <span class="footer-col-title">About</span>
+              <a href="OurStory.html">Our Story</a>
+              <a href="BYND Human Website - Review.dc.html">Journal</a>
+              <a href="BYND Human Website - Review.dc.html">Reviews</a>
+            </div>
+            <div class="footer-col">
+              <span class="footer-col-title">Support</span>
+              <a href="Contact.html" class="active">Contact Us</a>
+              <a href="ShippingPolicy.html">Shipping</a>
+              <a href="ReturnsRefunds.html">Returns &amp; Refunds</a>
+              <a href="Warranty.html">Warranty</a>
+            </div>
+          </div>
+        </div>
+        <!-- Trust + Payments -->
+        <div class="footer-trust-row">
+          <div class="footer-trust-items">
+            <span class="footer-trust-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00E3FF" stroke-width="1.6">
+                <path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"></path>
+                <path d="M9 12l2 2 4-4"></path>
+              </svg>
+              Quality guaranteed
+            </span>
+            <span class="footer-trust-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00E3FF" stroke-width="1.6">
+                <path d="M3 7h11v10H3zM14 10h4l3 3v4h-7"></path>
+                <circle cx="7" cy="18" r="1.6"></circle>
+                <circle cx="17" cy="18" r="1.6"></circle>
+              </svg>
+              Tracked shipping
+            </span>
+            <span class="footer-trust-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00E3FF" stroke-width="1.6">
+                <path d="M4 5h16v11H8l-4 4z"></path>
+              </svg>
+              Real human support
+            </span>
+            <span class="footer-trust-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00E3FF" stroke-width="1.6">
+                <rect x="4" y="10" width="16" height="11" rx="2"></rect>
+                <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
+              </svg>
+              Secure checkout
+            </span>
+          </div>
+          <div class="footer-payments-bottom">
+            <span class="footer-payment"
+              style="background:#fff;color:#1A1F71;font-size:11px;font-style:italic">VISA</span>
+            <span class="footer-payment" style="background:#fff"><span
+                style="width:12px;height:12px;border-radius:50%;background:#EB001B"></span><span
+                style="width:12px;height:12px;border-radius:50%;background:#F79E1B;margin-left:-5px;opacity:0.9"></span></span>
+            <span class="footer-payment" style="background:#2E77BC;color:#fff;font-size:9px">AMEX</span>
+            <span class="footer-payment"
+              style="background:#fff;color:#003087;font-size:9px;font-style:italic">PayPal</span>
+            <span class="footer-payment"
+              style="background:#5A31F4;color:#fff;font-size:9px;font-style:italic">shop</span>
+            <span class="footer-payment" style="background:#fff;color:#0A0E12;font-size:9px;font-weight:700">⌁Pay</span>
+            <span class="footer-payment" style="background:#fff;color:#3C4043;font-size:9px;font-weight:700">G
+              Pay</span>
+          </div>
+        </div>
+        <!-- Disclaimer -->
+        <p class="footer-disclaimer">*These statements have not been evaluated by the Food and Drug Administration.
+          These products are not intended to diagnose, treat, cure, or prevent any disease. The information on this
+          website is for general informational purposes only and is not a substitute for professional medical advice.
+          Consult your healthcare provider before starting any new supplement or wellness routine.</p>
+        <!-- Legal -->
+        <div class="footer-legal">
+          <span>© 2026 BYND Human. All rights reserved.</span>
+          <span class="footer-legal-links">
+            <a href="PrivacyPolicy.html">Privacy</a>
+            <a href="Terms.html">Terms</a>
+            <a href="ReturnsRefunds.html">Refunds</a>
+            <a href="ShippingPolicy.html">Shipping</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
+
+  <!-- Store & Main JS -->
+  <script src="js/store.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Contact Form Validation & Handler -->
+  <script>
+    (function () {
+      const form = document.getElementById('contact-form');
+      const submitBtn = document.getElementById('contact-submit-btn');
+      const alertBox = document.getElementById('contact-feedback-alert');
+      const alertTitle = document.getElementById('feedback-alert-title');
+      const alertBody = document.getElementById('feedback-alert-body');
+
+      const nameInput = document.getElementById('contact-name');
+      const emailInput = document.getElementById('contact-email');
+      const subjectInput = document.getElementById('contact-subject');
+      const messageInput = document.getElementById('contact-message');
+
+      function validateField(input, group, condition) {
+        if (!condition) {
+          group.classList.add('has-error');
+          input.classList.add('is-invalid');
+          return false;
+        } else {
+          group.classList.remove('has-error');
+          input.classList.remove('is-invalid');
+          return true;
+        }
+      }
+
+      // Live validation on blur
+      nameInput.addEventListener('blur', () => {
+        validateField(nameInput, document.getElementById('group-name'), nameInput.value.trim().length >= 2);
+      });
+
+      emailInput.addEventListener('blur', () => {
+        const val = emailInput.value.trim();
+        validateField(emailInput, document.getElementById('group-email'), val.includes('@') && val.includes('.'));
+      });
+
+      subjectInput.addEventListener('change', () => {
+        validateField(subjectInput, document.getElementById('group-subject'), subjectInput.value !== '');
+      });
+
+      messageInput.addEventListener('blur', () => {
+        validateField(messageInput, document.getElementById('group-message'), messageInput.value.trim().length >= 10);
+      });
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const isNameValid = validateField(nameInput, document.getElementById('group-name'), nameInput.value.trim().length >= 2);
+        const emailVal = emailInput.value.trim();
+        const isEmailValid = validateField(emailInput, document.getElementById('group-email'), emailVal.includes('@') && emailVal.includes('.'));
+        const isSubjectValid = validateField(subjectInput, document.getElementById('group-subject'), subjectInput.value !== '');
+        const isMessageValid = validateField(messageInput, document.getElementById('group-message'), messageInput.value.trim().length >= 10);
+
+        if (!isNameValid || !isEmailValid || !isSubjectValid || !isMessageValid) {
+          // Focus first invalid field
+          const firstInvalid = form.querySelector('.is-invalid');
+          if (firstInvalid) firstInvalid.focus();
+          return;
+        }
+
+        // Simulate form submission
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `<span>Sending inquiry...</span>`;
+
+        setTimeout(() => {
+          const userName = nameInput.value.trim().split(' ')[0] || 'there';
+          const userSubject = subjectInput.value;
+
+          alertBox.className = 'form-feedback-alert is-success';
+          alertTitle.textContent = `Thank you, ${userName}! Your message was received.`;
+          alertBody.innerHTML = `Your inquiry regarding <strong>${userSubject}</strong> has been received by our advisory team. We will review and reply within 24–48 business hours.<br><small style="display:inline-block;margin-top:6px;opacity:0.85">Note: Client-side prototype preview mode. Backend form endpoint integration will route live submissions directly to your support email.</small>`;
+          alertBox.style.display = 'flex';
+
+          // Reset fields
+          form.reset();
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = `<span>✓ Message sent</span>`;
+
+          // Scroll to feedback
+          alertBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+          setTimeout(() => {
+            submitBtn.innerHTML = `<span>Submit message</span><span class="btn-arrow">→</span>`;
+          }, 5000);
+        }, 600);
+      });
+    })();
+  </script>
+</body>
+
+</html>

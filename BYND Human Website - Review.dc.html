@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta name="design_doc_mode" content="canvas">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    html,body{margin:0;background:#D9DFE5;-webkit-font-smoothing:antialiased}
+    *{box-sizing:border-box}
+    a{color:#0A0E12;text-decoration:none}
+    a:hover{color:#009CFF}
+  </style>
+</helmet>
+<section id="1" style="font-family:'Montserrat',sans-serif;color:#0A0E12;padding:64px;display:flex;flex-direction:column;gap:56px;width:max-content">
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:48px;width:2040px">
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <img src="assets/bynd-plus-mark.png" alt="BYND+" style="height:40px;width:auto;align-self:flex-start">
+      <h1 style="margin:0;font-size:56px;font-weight:600;letter-spacing:-0.035em;line-height:1">Shopify storefront — design review</h1>
+      <p style="margin:0;font-size:18px;color:#34383D;max-width:900px;line-height:1.6">Mobile-first. Light editorial base (white + Ice), Carbon bands for emphasis, cyan→blue used only as accent. Every page below is live — scroll inside each frame, click through, open full size.</p>
+    </div>
+    <div style="display:flex;gap:10px">
+      <sc-for list="{{ pages }}" as="pg" hint-placeholder-count="5">
+        <a href="{{ pg.src }}" target="_blank" style="height:44px;padding:0 20px;border-radius:999px;background:#0A0E12;color:#FFFFFF;font-size:13px;font-weight:600;display:flex;align-items:center;white-space:nowrap">{{ pg.label }} ↗</a>
+      </sc-for>
+    </div>
+  </div>
+
+  <sc-for list="{{ pages }}" as="pg" hint-placeholder-count="5">
+    <div id="{{ pg.id }}" style="display:flex;flex-direction:column;gap:20px">
+      <div style="display:flex;align-items:center;gap:14px">
+        <span style="height:30px;padding:0 12px;border-radius:999px;background:#0A0E12;color:#FFFFFF;font-size:13px;font-weight:700;display:flex;align-items:center">{{ pg.id }}</span>
+        <span style="font-size:28px;font-weight:600;letter-spacing:-0.02em">{{ pg.label }}</span>
+        <span style="font-size:15px;color:#5A636C">{{ pg.note }}</span>
+      </div>
+      <div style="display:flex;gap:48px;align-items:flex-start">
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <span style="font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#5A636C">Mobile · 390</span>
+          <div style="width:414px;height:868px;border-radius:44px;background:#0A0E12;padding:12px;box-shadow:0 30px 80px -30px rgba(10,14,18,0.5)">
+            <iframe src="{{ pg.src }}" title="{{ pg.label }} mobile" style="width:390px;height:844px;border:0;border-radius:34px;background:#FFFFFF;display:block"></iframe>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <span style="font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#5A636C">Desktop · 1440</span>
+          <div style="width:1440px;border-radius:12px;overflow:hidden;background:#FFFFFF;box-shadow:0 30px 80px -30px rgba(10,14,18,0.4)">
+            <div style="height:36px;background:#F1F4F7;border-bottom:1px solid #E3E8ED;display:flex;align-items:center;gap:7px;padding:0 14px"><span style="width:11px;height:11px;border-radius:50%;background:#C9D2DA"></span><span style="width:11px;height:11px;border-radius:50%;background:#C9D2DA"></span><span style="width:11px;height:11px;border-radius:50%;background:#C9D2DA"></span><span style="margin-left:16px;font-size:12px;color:#5A636C">byndhuman.com{{ pg.path }}</span></div>
+            <iframe src="{{ pg.src }}" title="{{ pg.label }} desktop" style="width:1440px;height:832px;border:0;display:block"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </sc-for>
+
+  <div style="display:flex;gap:48px;align-items:flex-start;width:2040px">
+    <div id="system" style="flex:1;background:#FFFFFF;border-radius:16px;padding:48px;display:flex;flex-direction:column;gap:40px">
+      <span style="font-size:28px;font-weight:600;letter-spacing:-0.02em">Design system</span>
+      <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:12px">
+        <sc-for list="{{ colors }}" as="c" hint-placeholder-count="6">
+          <div style="display:flex;flex-direction:column;gap:8px"><span style="{{ c.sw }}"></span><span style="font-size:13px;font-weight:600">{{ c.name }}</span><span style="font-size:12px;color:#5A636C">{{ c.hex }} · {{ c.use }}</span></div>
+        </sc-for>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px;border-top:1px solid #E3E8ED;padding-top:28px">
+        <span style="font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#5A636C">Type · Montserrat</span>
+        <span style="font-size:64px;font-weight:600;letter-spacing:-0.035em;line-height:1">Go beyond your baseline.</span>
+        <span style="font-size:13px;color:#5A636C">Display 600 · clamp(38–104px) · tracking −3.5%</span>
+        <span style="font-size:36px;font-weight:600;letter-spacing:-0.03em">Section heading <span style="font-weight:400;font-style:italic">with italic accent</span></span>
+        <span style="font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#007ACC">Eyebrow label · 600 · 12px · +14%</span>
+        <span style="font-size:16px;line-height:1.7;color:#34383D;max-width:640px">Body 400 · 15–16px · 1.7 line-height. Graphite on white for long-form reading, capped at ~60 characters per line.</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px;border-top:1px solid #E3E8ED;padding-top:28px">
+        <span style="font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#5A636C">Buttons &amp; controls</span>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center">
+          <span style="height:52px;padding:0 30px;border-radius:999px;background:#0A0E12;color:#FFFFFF;font-weight:600;font-size:14px;display:flex;align-items:center">Primary</span>
+          <span style="height:52px;padding:0 30px;border-radius:999px;border:1px solid #0A0E12;font-weight:600;font-size:14px;display:flex;align-items:center">Secondary</span>
+          <span style="height:52px;padding:0 30px;border-radius:999px;background:linear-gradient(180deg,#00E3FF,#009CFF);color:#0A0E12;font-weight:700;font-size:14px;display:flex;align-items:center">Accent (dark bands only)</span>
+          <span style="height:52px;padding:0 30px;border-radius:999px;background:#C9D2DA;color:#34383D;font-weight:600;font-size:14px;display:flex;align-items:center">Sold out</span>
+          <span style="height:36px;padding:0 16px;border-radius:999px;background:#0A0E12;color:#FFFFFF;font-size:12px;font-weight:600;display:flex;align-items:center">Chip · active</span>
+          <span style="height:36px;padding:0 16px;border-radius:999px;border:1px solid #C9D2DA;font-size:12px;font-weight:600;display:flex;align-items:center">Chip</span>
+          <span style="padding:5px 10px;border-radius:999px;background:#F1F4F7;font-size:11px;font-weight:600;color:#34383D">Badge</span>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;border-top:1px solid #E3E8ED;padding-top:28px;font-size:14px;line-height:1.7;color:#34383D">
+        <span style="font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#5A636C">Shopify 2.0 sections</span>
+        <span>Header (announcement + nav) · Hero split · Value strip · Product row w/ collection chips · Image-with-text · Dark feature band (2 cards) · Accordion w/ image · Stats spotlight · Product card grid · Comparison table · FAQ · Footer w/ newsletter. Product page reads specs from metafields; "To be confirmed" rows hide when a metafield is empty.</span>
+      </div>
+    </div>
+    <div id="images" style="width:820px;background:#FFFFFF;border-radius:16px;padding:48px;display:flex;flex-direction:column;gap:24px">
+      <span style="font-size:28px;font-weight:600;letter-spacing:-0.02em">Supporting image plan</span>
+      <span style="font-size:14px;line-height:1.6;color:#34383D">Every placeholder in the pages is a drop target — drag an image onto it. Grade: cool, low-saturation, carbon shadows; red only where it comes from the device. Real product photos are used wherever a product appears.</span>
+      <sc-for list="{{ plan }}" as="g" hint-placeholder-count="3">
+        <div style="display:flex;flex-direction:column;gap:6px;border-top:1px solid #E3E8ED;padding-top:16px">
+          <span style="font-size:13px;font-weight:700">{{ g.page }}</span>
+          <sc-for list="{{ g.items }}" as="it" hint-placeholder-count="4">
+            <span style="font-size:13px;line-height:1.55;color:#34383D">{{ it }}</span>
+          </sc-for>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const sw = hex => ({ height: 88, borderRadius: 10, background: hex, border: '1px solid #E3E8ED' });
+    return {
+      pages: [
+        { id: '1a', label: 'Homepage', src: 'Home.dc.html', path: '/', note: 'Hero → shop row → light intro → devices band → science → whey → daily stack → compare → FAQ' },
+        { id: '1b', label: 'Red Light Therapy', src: 'Red%20Light%20Therapy.dc.html', path: '/pages/red-light-therapy', note: 'Full-bleed hero → explainer → device rows → anatomy → 3-step routine → protocol → FAQ' },
+        { id: '1c', label: 'Collection', src: 'Collection.dc.html', path: '/collections/all', note: 'Category tiles, sticky filter chips + sort, 2-col mobile grid' },
+        { id: '1d', label: 'Product — supplement', src: 'Product.dc.html?p=whey', path: '/products/premium-whey-protein', note: 'Flavour variants, gallery, accordions, sticky mobile add-to-cart' },
+        { id: '1e', label: 'Product — device', src: 'Product.dc.html?p=mini', path: '/products/precision-red-light-mini', note: 'Same template: sold-out state, notify-me, spec table' },
+        { id: '1f', label: 'Contact', src: 'Contact.html', path: '/pages/contact', note: 'Support advisory info, response commitment, validated message form' }
+      ],
+      colors: [
+        { name: 'Carbon', hex: '#0A0E12', use: 'text, bands', sw: sw('#0A0E12') },
+        { name: 'Graphite', hex: '#34383D', use: 'body text', sw: sw('#34383D') },
+        { name: 'Ice', hex: '#E7EEF4', use: 'sections, tiles', sw: sw('#E7EEF4') },
+        { name: 'White', hex: '#FFFFFF', use: 'base', sw: sw('#FFFFFF') },
+        { name: 'Cyan', hex: '#00E3FF', use: 'accent on dark', sw: sw('#00E3FF') },
+        { name: 'Blue', hex: '#009CFF', use: 'accent, icons', sw: sw('#009CFF') }
+      ],
+      plan: [
+        { page: 'Homepage', items: ['H-05 · Precision (mini) on a desk, red glow, dim interior', 'H-06 · Athlete beside the Elite panel, minimal studio', 'H-07 · Macro of red LED array, cool surround', 'H-08 · Editorial portrait after training, soft daylight', 'Omega 3+ product shot — real photo from Shopify'] },
+        { page: 'Red Light Therapy', items: ['L-01 · Full-bleed hero: person in front of Elite, near-black room', 'L-02 · LED array detail', 'L-03 · Seated session at home', 'L-04 · Morning routine with device in background', 'L-05 · Setting up the Elite in a home gym', 'L-06 · Hand on onboard controls', 'L-07 · Evening session, relaxed'] },
+        { page: 'Product pages', items: ['P-01–P-10 · Supplement lifestyle & texture (shaker, powder macro, capsules, softgels)', 'P-11–P-16 · Precision (mini) alt angles, controls, LEDs, desk lifestyle', 'P-17–P-21 · Elite in-home, base detail, full-body session', 'P-22 · Full protocol set up in a home space', 'Elite standalone product shot — real photo from Shopify'] }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

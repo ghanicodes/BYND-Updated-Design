@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<script src="./js/store.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    html,body{margin:0;background:#FFFFFF;-webkit-font-smoothing:antialiased}
+    *{box-sizing:border-box}
+    a{color:#0A0E12;text-decoration:none}
+    a:hover{color:#009CFF}
+    ::-webkit-scrollbar{height:0;width:0}
+  </style>
+</helmet>
+<div style="background:#FFFFFF;color:#0A0E12;font-family:'Montserrat',sans-serif;min-height:100vh;overflow-x:clip">
+  <dc-import name="SiteHeader" style="position:sticky;top:0;z-index:50" active="contact" hint-size="100%,100px"></dc-import>
+
+  <section style="background:#F1F4F7;border-bottom:1px solid #E3E8ED;padding:clamp(40px,5vw,64px) var(--pad, clamp(16px,3.5vw,36px))">
+    <div style="max-width:780px;margin:0 auto;text-align:center;display:flex;flex-direction:column;gap:12px;align-items:center">
+      <span style="font-size:12px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#009CFF">Support &amp; Advisory</span>
+      <h1 style="margin:0;font-size:clamp(32px,4.4vw,54px);font-weight:700;letter-spacing:-0.035em;line-height:1.1">Direct support, human to human.</h1>
+      <p style="margin:0;font-size:clamp(15px,1.8vw,17px);line-height:1.65;color:#34383D;max-width:640px">
+        Have questions regarding our photobiomodulation devices, daily supplement formulas, or order fulfillment? Our specialized support team is here to assist.
+      </p>
+    </div>
+  </section>
+
+  <section style="padding:clamp(48px,5.5vw,76px) var(--pad, clamp(16px,3.5vw,36px))">
+    <div style="max-width:var(--max-w, 1260px);margin:0 auto">
+      <div class="contact-grid">
+        <!-- Support info cards -->
+        <div style="display:flex;flex-direction:column;gap:24px">
+          <div class="contact-support-card">
+            <div class="contact-card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+            </div>
+            <h3 class="contact-card-title">Device &amp; Protocol Advisory</h3>
+            <p class="contact-card-body">
+              Need guidance selecting between the Elite Full Body System and Precision Mini, or recommendations on session timing and distance? Our protocol specialists are on hand.
+            </p>
+            <div class="contact-card-meta">
+              <span>Personalized routine recommendations</span>
+            </div>
+          </div>
+
+          <div class="contact-support-card">
+            <div class="contact-card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="1" y="3" width="15" height="13"></rect>
+                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                <circle cx="18.5" cy="18.5" r="2.5"></circle>
+              </svg>
+            </div>
+            <h3 class="contact-card-title">Order Fulfillment &amp; Logistics</h3>
+            <p class="contact-card-body">
+              Inquiries regarding tracked shipping, international customs, address updates, or delivery status across North America and select international destinations.
+            </p>
+            <div class="contact-card-meta">
+              <span>Real-time courier updates provided</span>
+            </div>
+          </div>
+
+          <div class="contact-support-card">
+            <div class="contact-card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <h3 class="contact-card-title">Warranty &amp; Hardware Support</h3>
+            <p class="contact-card-body">
+              All BYND+ red light devices include comprehensive manufacturer warranty coverage. Contact our technical team for device setup, diagnostics, or replacement service.
+            </p>
+            <div class="contact-card-meta">
+              <span>Dedicated hardware support</span>
+            </div>
+          </div>
+
+          <div class="contact-support-card" style="background:#F1F4F7;border-color:#C9D2DA">
+            <div class="contact-card-icon" style="background:#0A0E12;color:#00E3FF">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <h3 class="contact-card-title">Response Commitment</h3>
+            <p class="contact-card-body">
+              Our support team typically responds to all client submissions within <strong>24–48 business hours</strong>, Monday through Friday.
+            </p>
+            <div class="contact-card-meta" style="color:#5A636C">
+              <span>Direct email: support@byndhuman.com</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact form card -->
+        <div class="contact-form-card">
+          <h2 class="contact-form-title">Send us a message</h2>
+          <p class="contact-form-subtitle">
+            Please share your details below. A dedicated BYND Human advisor will review your inquiry and follow up promptly.
+          </p>
+
+          <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+            <div class="form-feedback-alert is-success" style="display:flex;margin-bottom:24px">
+              <div class="feedback-alert-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+              </div>
+              <div class="feedback-alert-text">
+                <div class="feedback-alert-title">Thank you! Your message was received.</div>
+                <div>Your inquiry has been logged. An advisor will get back to you within 24–48 business hours.<br><small style="display:inline-block;margin-top:6px;opacity:0.85">Note: Client-side prototype preview mode. Backend form endpoint integration will route live submissions directly to your support email.</small></div>
+              </div>
+            </div>
+          </sc-if>
+
+          <form class="contact-form" onSubmit="{{ onSubmit }}">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Full Name <span class="required">*</span></label>
+                <input type="text" value="{{ name }}" onChange="{{ onName }}" class="form-control" placeholder="e.g. Alex Morgan" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Email Address <span class="required">*</span></label>
+                <input type="email" value="{{ email }}" onChange="{{ onEmail }}" class="form-control" placeholder="alex@example.com" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Subject / Topic <span class="required">*</span></label>
+                <select value="{{ subject }}" onChange="{{ onSubject }}" class="form-control" required>
+                  <option value="" disabled>Select an inquiry type</option>
+                  <option value="Product & Protocol Advice">Product &amp; Protocol Advisory</option>
+                  <option value="Order & Shipping Status">Order &amp; Shipping Status</option>
+                  <option value="Device Setup & Warranty">Device Setup &amp; Warranty</option>
+                  <option value="Supplement Ingredients & Nutrition">Supplement Ingredients &amp; Nutrition</option>
+                  <option value="Wholesale & Partnerships">Wholesale &amp; Partnerships</option>
+                  <option value="General Question">General Question</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Order Number <span style="font-weight:400;color:#6E7882">(optional)</span></label>
+                <input type="text" value="{{ order }}" onChange="{{ onOrder }}" class="form-control" placeholder="e.g. #BYND-10482">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Message <span class="required">*</span></label>
+              <textarea value="{{ message }}" onChange="{{ onMessage }}" class="form-control" placeholder="How can our team help you?" required></textarea>
+            </div>
+
+            <button type="submit" class="form-submit-btn">
+              <span>{{ submitText }}</span>
+              <span class="btn-arrow">→</span>
+            </button>
+
+            <p style="font-size:11.5px;color:#6E7882;line-height:1.5;margin-top:6px">
+              By submitting this form, you agree to our <a href="#" style="color:#5A636C;text-decoration:underline">Privacy Policy</a>. Your personal data is kept confidential and is never shared.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="SiteFooter" hint-size="100%,640px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = {
+    name: '', email: '', subject: 'Product & Protocol Advice', order: '', message: '',
+    submitted: false, submitting: false
+  };
+  renderVals() {
+    return {
+      name: this.state.name,
+      email: this.state.email,
+      subject: this.state.subject,
+      order: this.state.order,
+      message: this.state.message,
+      submitted: this.state.submitted,
+      submitText: this.state.submitting ? 'Sending inquiry...' : (this.state.submitted ? '✓ Message sent' : 'Submit message'),
+      onName: e => this.setState({ name: e.target.value }),
+      onEmail: e => this.setState({ email: e.target.value }),
+      onSubject: e => this.setState({ subject: e.target.value }),
+      onOrder: e => this.setState({ order: e.target.value }),
+      onMessage: e => this.setState({ message: e.target.value }),
+      onSubmit: e => {
+        e.preventDefault();
+        if (!this.state.name || !this.state.email || !this.state.message) return;
+        this.setState({ submitting: true });
+        setTimeout(() => {
+          this.setState({ submitted: true, submitting: false, name: '', email: '', order: '', message: '' });
+        }, 500);
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<script src="./js/store.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="./image-slot.js"></script>
+  <style>
+    html,body{margin:0;background:#FFFFFF;-webkit-font-smoothing:antialiased}
+    *{box-sizing:border-box}
+    a{color:#0A0E12;text-decoration:none}
+    a:hover{color:#009CFF}
+    ::-webkit-scrollbar{height:0;width:0}
+  </style>
+</helmet>
+<div style="background:#FFFFFF;color:#0A0E12;font-family:'Montserrat',sans-serif;min-height:100vh;overflow-x:clip">
+  <dc-import name="SiteHeader" style="position:sticky;top:0;z-index:50" active="{{ navKey }}" hint-size="100%,100px"></dc-import>
+
+  <section data-screen-label="PDP · Buy box" style="padding:16px 0 clamp(36px,5vw,64px)">
+    <div style="width:min(100% - (var(--gutter, 32px) * 2), var(--max-w, 1260px));margin:0 auto;display:flex;flex-direction:column;gap:16px;box-sizing:border-box">
+      <nav style="font-size:12px;color:#5A636C;display:flex;gap:8px;flex-wrap:wrap;padding:0"><a href="Home.dc.html" style="color:#5A636C">Home</a><span>/</span><a href="{{ crumbHref }}" style="color:#5A636C">{{ crumb }}</a><span>/</span><span style="color:#0A0E12">{{ p.short }}</span></nav>
+      <div style="display:flex;flex-wrap:wrap;gap:clamp(24px,5vw,72px);align-items:flex-start">
+        <div style="flex:1.15 1 440px;min-width:0;display:flex;flex-direction:column;gap:10px">
+          <div style="position:relative;aspect-ratio:1/1;border-radius:12px;background:#F1F4F7;overflow:hidden">
+            <sc-if value="{{ mainStyle }}" hint-placeholder-val="{{ true }}"><span style="{{ mainStyle }}"></span></sc-if>
+            <sc-if value="{{ mainSlot }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;inset:0;color:#8A939C"><image-slot id="{{ mainSlot }}" shape="rect" placeholder="{{ mainSlotLabel }}"></image-slot></span></sc-if>
+            <sc-if value="{{ p.badge }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;top:14px;left:14px;padding:6px 12px;border-radius:999px;background:#FFFFFF;font-size:11px;font-weight:600;color:#34383D">{{ p.badge }}</span></sc-if>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px">
+            <sc-for list="{{ thumbs }}" as="t" hint-placeholder-count="4">
+              <button onClick="{{ t.pick }}" style="{{ t.frame }}"><span style="{{ t.style }}"></span></button>
+            </sc-for>
+          </div>
+        </div>
+        <div style="flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:20px;padding:0">
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <span style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#007ACC">{{ p.tags }}</span>
+            <h1 style="margin:0;font-size:clamp(26px,3vw,40px);font-weight:600;line-height:1.12;letter-spacing:-0.025em;text-wrap:balance">{{ p.name }}</h1>
+            <span style="font-size:20px;font-weight:600">{{ p.priceLabel }}</span>
+          </div>
+          <p style="margin:0;font-size:15px;line-height:1.7;color:#34383D">{{ p.desc }}</p>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <sc-for list="{{ p.points }}" as="pt" hint-placeholder-count="3">
+              <span style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#34383D"><span style="color:#009CFF;font-weight:700">✓</span>{{ pt }}</span>
+            </sc-for>
+          </div>
+          <sc-if value="{{ hasVariants }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <span style="font-size:13px;font-weight:600">Flavour: <span style="font-weight:400;color:#5A636C">{{ variantName }}</span></span>
+              <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px">
+                <sc-for list="{{ variants }}" as="v" hint-placeholder-count="2">
+                  <button onClick="{{ v.pick }}" style="{{ v.style }}"><span style="{{ v.dot }}"></span>{{ v.label }}</button>
+                </sc-for>
+              </div>
+            </div>
+          </sc-if>
+          <sc-if value="{{ isSupp }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <span style="font-size:13px;font-weight:600">Purchase option</span>
+              <div onClick="{{ pickSub }}" style="{{ subCard }}">
+                <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+                  <span style="display:flex;align-items:center;gap:10px"><span style="{{ subDot }}"></span><span style="display:flex;flex-direction:column;gap:2px"><span style="font-size:14px;font-weight:600">Subscribe &amp; save</span><span style="font-size:11px;color:#5A636C">Delivered on your schedule</span></span></span>
+                  <span style="display:flex;align-items:center;gap:8px"><span style="padding:4px 8px;border-radius:999px;background:linear-gradient(180deg,#00E3FF,#009CFF);color:#0A0E12;font-size:10px;font-weight:700">SAVE 15%</span><span style="font-size:14px;font-weight:600">{{ subPrice }}</span></span>
+                </div>
+                <sc-if value="{{ isSub }}" hint-placeholder-val="{{ true }}">
+                  <div style="display:flex;flex-direction:column;gap:10px;padding-top:14px;margin-top:14px;border-top:1px solid #D5DDE4">
+                    <span style="font-size:12px;color:#34383D">Deliver every</span>
+                    <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px">
+                      <sc-for list="{{ freqs }}" as="f" hint-placeholder-count="3"><span onClick="{{ f.pick }}" style="{{ f.style }}">{{ f.label }}</span></sc-for>
+                    </div>
+                    <div style="display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12px;color:#34383D">
+                      <span style="display:flex;gap:6px"><span style="color:#009CFF;font-weight:700">✓</span>Pause, skip or cancel anytime</span>
+                      <span style="display:flex;gap:6px"><span style="color:#009CFF;font-weight:700">✓</span>Never run out</span>
+                    </div>
+                  </div>
+                </sc-if>
+              </div>
+              <div onClick="{{ pickOnce }}" style="{{ onceCard }}">
+                <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+                  <span style="display:flex;align-items:center;gap:10px"><span style="{{ onceDot }}"></span><span style="font-size:14px;font-weight:600">One-time purchase</span></span>
+                  <span style="font-size:14px;font-weight:600">{{ p.priceLabel }}</span>
+                </div>
+              </div>
+            </div>
+          </sc-if>
+          <div style="display:flex;gap:10px;padding-top:4px">
+            <div style="display:flex;align-items:center;height:54px;border:1px solid #C9D2DA;border-radius:999px;flex-shrink:0">
+              <button onClick="{{ dec }}" style="width:44px;height:52px;background:none;border:0;font-size:18px;cursor:pointer;color:#0A0E12">−</button>
+              <span style="width:24px;text-align:center;font-size:14px;font-weight:600">{{ qty }}</span>
+              <button onClick="{{ inc }}" style="width:44px;height:52px;background:none;border:0;font-size:18px;cursor:pointer;color:#0A0E12">+</button>
+            </div>
+            <button onClick="{{ addToCart }}" style="{{ ctaStyle }}">{{ ctaLabel }}</button>
+          </div>
+          <sc-if value="{{ p.sold }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex;gap:8px;height:52px;border:1px solid #C9D2DA;border-radius:999px;padding:4px">
+              <input type="email" placeholder="Email me when it's back" style="flex:1;min-width:0;padding:0 16px;border:0;background:transparent;font-family:'Montserrat',sans-serif;font-size:13px;outline:none">
+              <button style="padding:0 18px;border-radius:999px;border:0;background:#0A0E12;color:#FFFFFF;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;cursor:pointer">Notify me</button>
+            </div>
+          </sc-if>
+          <div style="display:flex;flex-direction:column;gap:14px;padding:16px;border-radius:10px;background:#F1F4F7">
+            <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;font-size:11px;font-weight:500;color:#34383D;text-align:center">
+              <span style="display:flex;flex-direction:column;align-items:center;gap:6px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#009CFF" stroke-width="1.6"><rect x="4" y="10" width="16" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg>Secure checkout</span>
+              <span style="display:flex;flex-direction:column;align-items:center;gap:6px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#009CFF" stroke-width="1.6"><path d="M3 7h11v10H3zM14 10h4l3 3v4h-7"></path><circle cx="7" cy="18" r="1.6"></circle><circle cx="17" cy="18" r="1.6"></circle></svg>Tracked shipping</span>
+              <span style="display:flex;flex-direction:column;align-items:center;gap:6px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#009CFF" stroke-width="1.6"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"></path><path d="M9 12l2 2 4-4"></path></svg>Quality guaranteed</span>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;padding-top:12px;border-top:1px solid #D5DDE4">
+              <span style="width:38px;height:24px;border-radius:4px;background:#FFFFFF;border:1px solid #D5DDE4;display:flex;align-items:center;justify-content:center;color:#1A1F71;font-size:10px;font-weight:800;font-style:italic">VISA</span>
+              <span style="width:38px;height:24px;border-radius:4px;background:#FFFFFF;border:1px solid #D5DDE4;display:flex;align-items:center;justify-content:center"><span style="width:11px;height:11px;border-radius:50%;background:#EB001B"></span><span style="width:11px;height:11px;border-radius:50%;background:#F79E1B;margin-left:-4px;opacity:0.9"></span></span>
+              <span style="width:38px;height:24px;border-radius:4px;background:#2E77BC;display:flex;align-items:center;justify-content:center;color:#FFFFFF;font-size:8px;font-weight:800">AMEX</span>
+              <span style="width:38px;height:24px;border-radius:4px;background:#FFFFFF;border:1px solid #D5DDE4;display:flex;align-items:center;justify-content:center;color:#003087;font-size:8px;font-weight:800;font-style:italic">PayPal</span>
+              <span style="width:38px;height:24px;border-radius:4px;background:#5A31F4;display:flex;align-items:center;justify-content:center;color:#FFFFFF;font-size:9px;font-weight:800;font-style:italic">shop</span>
+              <span style="width:38px;height:24px;border-radius:4px;background:#FFFFFF;border:1px solid #D5DDE4;display:flex;align-items:center;justify-content:center;color:#3C4043;font-size:8px;font-weight:700">G Pay</span>
+            </div>
+          </div>
+          <div style="display:none">
+            <span style="display:flex;align-items:center;gap:8px;padding:12px;border-radius:8px;background:#F1F4F7"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="10" width="16" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg>Secure checkout</span>
+            <a href="#" style="display:flex;align-items:center;gap:8px;padding:12px;border-radius:8px;background:#F1F4F7;color:#34383D"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7h11v10H3zM14 10h4l3 3v4h-7"></path><circle cx="7" cy="18" r="1.6"></circle><circle cx="17" cy="18" r="1.6"></circle></svg>Shipping &amp; returns</a>
+          </div>
+          <div style="border-top:1px solid #D5DDE4">
+            <sc-for list="{{ panels }}" as="a" hint-placeholder-count="4">
+              <div style="border-bottom:1px solid #D5DDE4">
+                <button onClick="{{ a.toggle }}" style="width:100%;display:flex;justify-content:space-between;align-items:center;padding:18px 0;background:none;border:0;color:#0A0E12;font-family:'Montserrat',sans-serif;font-size:14px;font-weight:600;cursor:pointer;text-align:left">{{ a.title }}<span style="font-size:18px;font-weight:400;color:#5A636C">{{ a.icon }}</span></button>
+                <sc-if value="{{ a.open }}" hint-placeholder-val="{{ false }}">
+                  <div style="padding:0 0 18px;display:flex;flex-direction:column">
+                    <sc-for list="{{ a.rows }}" as="r" hint-placeholder-count="3">
+                      <div style="display:flex;justify-content:space-between;gap:20px;padding:10px 0;border-bottom:1px dashed #E3E8ED;font-size:13px;line-height:1.5"><span style="color:#5A636C">{{ r.k }}</span><span style="{{ r.vStyle }}">{{ r.v }}</span></div>
+                    </sc-for>
+                    <sc-if value="{{ a.text }}" hint-placeholder-val="{{ false }}"><p style="margin:0;font-size:14px;line-height:1.7;color:#34383D">{{ a.text }}</p></sc-if>
+                  </div>
+                </sc-if>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="PDP · Details" style="background:#E7EEF4;padding:clamp(48px,5.5vw,76px) 0">
+    <div style="width:min(100% - (var(--gutter, 32px) * 2), var(--max-w, 1260px));margin:0 auto;display:flex;flex-direction:column;gap:clamp(28px,4vw,48px);box-sizing:border-box">
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <span style="font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#5A636C">Product details</span>
+        <h2 style="margin:0;font-size:clamp(28px,3.6vw,48px);font-weight:600;line-height:1.08;letter-spacing:-0.03em;max-width:760px;text-wrap:balance">{{ p.detailHead }}</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:16px">
+        <sc-for list="{{ p.details }}" as="d" hint-placeholder-count="3">
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <div style="position:relative;aspect-ratio:4/3;border-radius:10px;overflow:hidden;background:#FFFFFF">
+              <sc-if value="{{ d.style }}" hint-placeholder-val="{{ true }}"><span style="{{ d.style }}"></span></sc-if>
+              <sc-if value="{{ d.slot }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;inset:0;color:#8A939C"><image-slot id="{{ d.slot }}" shape="rect" placeholder="{{ d.slotLabel }}"></image-slot></span></sc-if>
+            </div>
+            <span style="font-size:17px;font-weight:600">{{ d.title }}</span>
+            <span style="font-size:14px;line-height:1.6;color:#34383D">{{ d.body }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="PDP · How to use" style="padding:clamp(48px,5.5vw,76px) 0">
+    <div style="width:min(100% - (var(--gutter, 32px) * 2), var(--max-w, 1260px));margin:0 auto;display:flex;flex-wrap:wrap;gap:clamp(32px,5vw,64px);align-items:center;box-sizing:border-box">
+      <div style="flex:1 1 400px;min-width:0;aspect-ratio:4/3;border-radius:12px;overflow:hidden;background:#FFFFFF;position:relative">
+        <img
+          src="{{ p.useSrc }}"
+          alt="{{ p.useSlotLabel }}"
+          style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;display:block;">
+      </div>
+      <div style="flex:1 1 360px;min-width:0;display:flex;flex-direction:column;gap:16px">
+        <span style="font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#5A636C">How to use</span>
+        <h2 style="margin:0;font-size:clamp(28px,3.4vw,44px);font-weight:600;line-height:1.1;letter-spacing:-0.03em">{{ p.useHead }}</h2>
+        <p style="margin:0;font-size:15px;line-height:1.7;color:#34383D;max-width:440px">{{ p.useBody }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="PDP · Related" style="padding:0 0 clamp(48px,5.5vw,76px)">
+    <div style="width:min(100% - (var(--gutter, 32px) * 2), var(--max-w, 1260px));margin:0 auto;padding:0;display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:24px;box-sizing:border-box">
+      <h2 style="margin:0;font-size:clamp(26px,3.2vw,40px);font-weight:600;line-height:1.1;letter-spacing:-0.03em">Complete your <span style="font-weight:400;font-style:italic">protocol</span></h2>
+      <a href="Collection.dc.html" style="font-size:14px;font-weight:600;text-decoration:underline;text-underline-offset:4px;flex-shrink:0">View all</a>
+    </div>
+    <div style="width:min(100% - (var(--gutter, 32px) * 2), var(--max-w, 1260px));margin:0 auto;padding:0;box-sizing:border-box">
+      <div style="display:grid;grid-auto-flow:column;grid-auto-columns:minmax(200px,1fr);gap:14px;overflow-x:auto;padding:0">
+        <sc-for list="{{ related }}" as="r" hint-placeholder-count="4">
+          <a href="{{ r.href }}" style="display:flex;flex-direction:column;gap:10px;color:#0A0E12">
+            <span style="position:relative;aspect-ratio:1/1;border-radius:8px;background:#F1F4F7;overflow:hidden;display:block"><span style="{{ r.style }}"></span></span>
+            <span style="font-size:14px;font-weight:600;line-height:1.35">{{ r.name }}</span>
+            <span style="font-size:13px;color:#5A636C">{{ r.priceLabel }}</span>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="PDP · FAQ" style="padding:0 0 clamp(48px,5.5vw,76px)">
+    <div style="width:min(100% - (var(--gutter, 32px) * 2), 860px);margin:0 auto;display:flex;flex-direction:column;gap:32px;box-sizing:border-box">
+      <h2 style="margin:0;text-align:center;font-size:clamp(26px,3.2vw,40px);font-weight:600;line-height:1.1;letter-spacing:-0.03em">Frequently asked questions</h2>
+      <div style="border-top:1px solid #D5DDE4">
+        <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="3">
+          <div style="border-bottom:1px solid #D5DDE4">
+            <button onClick="{{ f.toggle }}" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:20px 0;background:none;border:0;color:#0A0E12;font-family:'Montserrat',sans-serif;font-size:15px;font-weight:600;text-align:left;cursor:pointer;line-height:1.45">{{ f.q }}<span style="flex-shrink:0;font-size:20px;font-weight:400;color:#5A636C">{{ f.icon }}</span></button>
+            <sc-if value="{{ f.open }}" hint-placeholder-val="{{ false }}"><p style="margin:0;padding:0 40px 20px 0;font-size:15px;line-height:1.7;color:#34383D">{{ f.a }}</p></sc-if>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="SiteFooter" hint-size="100%,640px"></dc-import>
+
+  <sc-if value="{{ showSticky }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;left:0;right:0;bottom:0;z-index:40;background:rgba(255,255,255,0.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid #E3E8ED;box-shadow:0 -10px 30px -12px rgba(10,14,18,0.18);padding:10px 0 calc(10px + env(safe-area-inset-bottom))">
+     <div style="width:min(100% - (var(--gutter, 32px) * 2), var(--max-w, 1260px));margin:0 auto;display:flex;align-items:center;gap:12px;box-sizing:border-box">
+      <span style="width:46px;height:46px;flex-shrink:0;border-radius:8px;background:#F1F4F7;position:relative;overflow:hidden"><span style="{{ stickyThumb }}"></span></span>
+      <span style="display:flex;flex-direction:column;gap:2px;min-width:0;flex:1"><span style="font-size:12px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ p.short }}</span><span style="font-size:12px;color:#5A636C">{{ stickySub }}</span></span>
+      <button onClick="{{ addToCart }}" style="{{ stickyStyle }}">{{ ctaShort }}</button>
+     </div>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;product&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;whey&quot;,&quot;creatine&quot;,&quot;mobility&quot;,&quot;omega&quot;,&quot;mini&quot;,&quot;elite&quot;,&quot;protocol&quot;],&quot;default&quot;:&quot;whey&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    let key = props.product || 'whey';
+    try { const q = new URLSearchParams(window.location.search).get('p'); if (q) key = q; } catch (e) {}
+    this.state = { key, img: 0, variant: 0, qty: 1, plan: 'sub', freq: 0, openPanel: 0, openFaq: 0, w: window.innerWidth, y: 0 };
+  }
+  componentDidMount() {
+    this.onR = () => this.setState({ w: window.innerWidth });
+    this.onS = () => { const y = window.scrollY > 640; if (y !== this.state.y) this.setState({ y }); };
+    window.addEventListener('resize', this.onR); window.addEventListener('scroll', this.onS, { passive: true });
+  }
+  componentWillUnmount() { window.removeEventListener('resize', this.onR); window.removeEventListener('scroll', this.onS); }
+  data() {
+    const T = (url, size = 'cover', pos = '50% 50%') => ({ position: 'absolute', inset: 0, backgroundImage: `url(${url})`, backgroundSize: size, backgroundPosition: pos, backgroundRepeat: 'no-repeat', mixBlendMode: 'multiply' });
+    const S = (slot, label) => ({ slot, label });
+    const tbc = 'To be confirmed';
+    const dev = (extra) => [{ k: 'Wavelengths', v: tbc }, { k: 'LED count', v: tbc }, { k: 'Irradiance', v: tbc }, { k: 'Dimensions & weight', v: tbc }, { k: 'Warranty', v: tbc }, ...extra];
+    const shipping = { title: 'Shipping & returns', text: 'Shipping, return and warranty terms follow the BYND Human store policies. See the Shipping and Returns pages for full details.' };
+    return {
+      whey: { type: 'supp', short: 'Premium Whey Protein', name: 'Premium Whey Protein', tags: 'Recovery · Daily nutrition · Lean muscle', price: 55, sold: false, crumb: 'Supplements',
+        desc: 'Contains 22 grams of protein per serving from whey protein isolate and concentrate, in a 16.9 oz (480 g) container.',
+        points: ['22 g protein per serving', 'Whey protein isolate & concentrate', 'Mix with 8–12 oz cold water'],
+        variants: [{ label: 'Vanilla Ice Cream', dot: '#EFE3C2', gallery: [T('assets/whey-vanilla.webp'), T('assets/whey-duo.webp'), T('assets/whey-float.webp'), T('assets/whey-powder.webp')] }, { label: 'Chocolate Cake', dot: '#5B3A29', gallery: [T('assets/whey-chocolate.webp'), T('assets/whey-powder.webp')] }],
+        specs: [{ k: 'Protein', v: '22 g per serving' }, { k: 'Net weight', v: '16.9 oz (480 g)' }, { k: 'Protein source', v: 'Whey isolate & concentrate' }, { k: 'Flavours', v: 'Vanilla Ice Cream, Chocolate Cake' }],
+        detailHead: 'Built for daily nutrition.', details: [{ style: T('assets/whey-duo.webp'), title: 'Protein content', body: '22 grams of protein per serving from whey blend.' }, { style: T('assets/whey-float.webp'), title: 'Serving suggestion', body: 'Mix two scoops with 8–12 oz cold water.' }, { style: T('assets/whey-powder.webp'), title: 'Product weight', body: '16.9 oz (480 g) net weight in a single container.' }],
+        useHead: 'Two scoops. Cold water.', useBody: 'Mix two scoops with 8–12 oz of cold water. Shake well and enjoy.', use: S('pdp-whey-use', 'IMG P-01 · Lifestyle: shaker being mixed post-workout, cool natural light'),
+        faqs: [{ q: 'How much protein is in each serving?', a: '22 grams of protein per serving from whey protein isolate and concentrate.' }, { q: 'How do I prepare it?', a: 'Mix two scoops with 8–12 oz of cold water.' }, { q: 'What flavours are available?', a: 'Vanilla Ice Cream and Chocolate Cake.' }] },
+      creatine: { type: 'supp', short: 'Creatine Monohydrate', name: 'Creatine Monohydrate', tags: 'Strength · Performance', price: null, sold: false, crumb: 'Supplements',
+        desc: 'Supports muscle strength, lean body mass, and cellular energy production.*', points: ['Creatine monohydrate', 'Net Wt. 8.8 oz (250 g)', 'Dietary supplement'],
+        gallery: [T('assets/creatine.webp')], specs: [{ k: 'Net weight', v: '8.8 oz (250 g)' }, { k: 'Format', v: 'Powder' }],
+        detailHead: 'One ingredient. Every day.', details: [{ style: T('assets/creatine.webp'), title: 'Creatine monohydrate', body: 'Supports muscle strength and lean body mass.*' }, { slot: 'pdp-cre-d2', slotLabel: 'IMG P-02 · Texture: creatine powder macro on cool surface', title: 'Cellular energy', body: 'Supports cellular energy production.*' }, { slot: 'pdp-cre-d3', slotLabel: 'IMG P-03 · Lifestyle: scoop into water bottle, gym bag', title: '250 g container', body: 'Net Wt. 8.8 oz (250 g).' }],
+        useHead: 'Simple, daily.', useBody: 'Follow the directions on the label.', use: S('pdp-cre-use', 'IMG P-04 · Lifestyle: creatine mixed into morning drink'),
+        faqs: [{ q: 'How big is the container?', a: 'Net Wt. 8.8 oz (250 g).' }, { q: 'How do I take it?', a: 'Follow the directions on the label.' }] },
+      mobility: { type: 'supp', short: 'Platinum Mobility+', name: 'Platinum Mobility+ Capsules', tags: 'Joints · Flexibility · Mobility', price: null, sold: false, crumb: 'Supplements',
+        desc: 'Supports joint comfort, flexibility, and healthy mobility.*', points: ['60 capsules', 'Dietary supplement'],
+        gallery: [T('assets/mobility.webp')], specs: [{ k: 'Count', v: '60 capsules' }, { k: 'Format', v: 'Capsules' }],
+        detailHead: 'Move with intent.', details: [{ style: T('assets/mobility.webp', 'cover', '50% 40%'), title: 'Joint comfort', body: 'Supports joint comfort and flexibility.*' }, { slot: 'pdp-mob-d2', slotLabel: 'IMG P-05 · Lifestyle: mobility session, stretching on mat', title: 'Healthy mobility', body: 'Supports healthy mobility.*' }, { slot: 'pdp-mob-d3', slotLabel: 'IMG P-06 · Capsules on stone surface, cool light', title: '60 capsules', body: 'One bottle, 60 capsules.' }],
+        useHead: 'Part of the daily stack.', useBody: 'Follow the directions on the label.', use: S('pdp-mob-use', 'IMG P-07 · Lifestyle: morning routine, capsule bottle on counter'),
+        faqs: [{ q: 'How many capsules are in a bottle?', a: '60 capsules.' }, { q: 'How do I take it?', a: 'Follow the directions on the label.' }] },
+      omega: { type: 'supp', short: 'Omega 3+ Fish Oil', name: 'Omega 3+ Fish Oil Softgels', tags: 'Heart · Brain · Joints · Immune', price: null, sold: false, crumb: 'Supplements',
+        desc: 'EPA 180mg + DHA 120mg per serving. Supports heart, brain, joints and immune health.*', points: ['EPA 180mg + DHA 120mg', '100 softgels'],
+        gallery: [T('assets/omega.webp', 'contain', '50% 50%'), T('assets/protocol-bundle.webp', 'contain')], specs: [{ k: 'EPA', v: '180 mg' }, { k: 'DHA', v: '120 mg' }, { k: 'Count', v: '100 softgels' }],
+        detailHead: 'Daily omega support.', details: [{ slot: 'pdp-om-d1', slotLabel: 'Omega 3+ bottle (from Shopify)', title: 'EPA + DHA', body: 'EPA 180mg + DHA 120mg.' }, { slot: 'pdp-om-d2', slotLabel: 'IMG P-08 · Softgels macro, golden on cool surface', title: 'Softgels', body: '100 softgels per bottle.' }, { slot: 'pdp-om-d3', slotLabel: 'IMG P-09 · Lifestyle: kitchen counter, daily stack', title: 'Daily health', body: 'Supports heart, brain, joints and immune health.*' }],
+        useHead: 'Part of the daily stack.', useBody: 'Follow the directions on the label.', use: S('pdp-om-use', 'IMG P-10 · Lifestyle: softgels with breakfast'),
+        faqs: [{ q: 'How much EPA and DHA?', a: 'EPA 180mg + DHA 120mg.' }, { q: 'How many softgels per bottle?', a: '100 softgels.' }] },
+      mini: { type: 'device', short: 'Precision Red Light (mini)', name: 'BYND+ Precision Red Light (mini)', tags: 'Red light therapy · Targeted', price: 3500, sold: false, badge: 'In stock', crumb: 'Red Light Therapy',
+        desc: 'A compact, stand-mounted red light panel for targeted sessions — sized for a desk, counter or nightstand.', points: ['Dense LED array', 'Onboard controls', 'Weighted desktop stand'],
+        gallery: [T('assets/precision-mini.webp')], gallerySlots: [],
+        specs: dev([{ k: 'Format', v: 'Desktop, stand-mounted' }, { k: 'Coverage', v: 'Targeted areas' }]),
+        detailHead: 'Targeted light, on your desk.', details: [{ style: T('assets/precision-mini.webp'), title: 'Stand-mounted', body: 'A weighted base holds the panel upright on any flat surface.' }, { slot: 'pdp-mini-d2', slotLabel: 'IMG P-14 · Close-up: onboard control buttons', title: 'Onboard controls', body: 'Start and manage sessions from the top of the device.' }, { slot: 'pdp-mini-d3', slotLabel: 'IMG P-15 · Macro: LED rows glowing red', title: 'Dense LED array', body: 'Rows of LEDs across the full face of the panel.' }],
+        useHead: 'Position. Start. Repeat.', useBody: 'Position yourself at the distance recommended in your user manual, start the session from the onboard controls, and repeat consistently.', use: S('pdp-mini-use', 'IMG P-16 · Lifestyle: targeted session at a desk, red glow'),
+        faqs: [{ q: 'Who is the Precision (mini) for?', a: 'Anyone who wants targeted red light sessions in a compact, desktop format.' }, { q: 'How does it compare to the Elite?', a: 'The mini is a compact panel for targeted areas; the Elite is a freestanding, full-height panel for full-body sessions.' }] },
+      elite: { type: 'device', short: 'Elite Red Light (Full Body)', name: 'BYND+ Elite Red Light (Full Body System)', tags: 'Red light therapy · Full body', price: 6000, sold: false, badge: 'In stock', crumb: 'Red Light Therapy',
+        desc: 'A freestanding, full-height red light panel built for whole-body sessions at home.', points: ['Full-height LED panel', 'Freestanding base', 'Designed for full-body sessions'],
+        gallery: [T('assets/elite-full-body.webp', 'contain', '50% 50%'), T('assets/protocol-bundle.webp', 'contain')], gallerySlots: [],
+        specs: dev([{ k: 'Format', v: 'Freestanding, full height' }, { k: 'Coverage', v: 'Full body' }]),
+        detailHead: 'Full-body light, at home.', details: [{ style: T('assets/elite-full-body.webp', 'contain', '50% 50%'), title: 'Full height', body: 'A tall LED panel designed for whole-body coverage.' }, { slot: 'pdp-elite-d2', slotLabel: 'IMG P-19 · Elite base & stand detail', title: 'Freestanding', body: 'Stands on its own base — no wall mounting shown.' }, { slot: 'pdp-elite-d3', slotLabel: 'IMG P-20 · Lifestyle: full-body session', title: 'Full-body sessions', body: 'Built for routines that cover the whole body.' }],
+        useHead: 'Position. Start. Repeat.', useBody: 'Stand at the distance recommended in your user manual, start the session, and repeat consistently.', use: S('pdp-elite-use', 'IMG P-21 · Lifestyle: athlete standing in front of the Elite'),
+        faqs: [{ q: 'Is the Elite included in the 90-Day Protocol?', a: 'Yes — the protocol pairs the Elite with the BYND supplement range.' }, { q: 'How does it compare to the mini?', a: 'The Elite is a freestanding, full-height panel for full-body sessions; the mini is a compact desktop panel for targeted areas.' }] },
+      protocol: { type: 'device', short: '90-Day Red Light Reset Protocol', name: 'BYND+ Elite 90-Day Red Light Reset Protocol', tags: 'Protocol · Device + supplements', price: null, sold: false, badge: 'In stock', crumb: 'Protocols',
+        desc: 'The BYND+ Elite Red Light (Full Body System) paired with the BYND supplement range — one structured, 90-day routine.', points: ['BYND+ Elite Red Light (Full Body System)', 'Premium Whey Protein · Creatine Monohydrate', 'Platinum Mobility+ · Omega 3+'],
+        gallery: [T('assets/protocol-bundle.webp', 'contain'), T('assets/whey-vanilla.webp'), T('assets/creatine.webp'), T('assets/mobility.webp')],
+        specs: [{ k: 'Device', v: 'BYND+ Elite Red Light (Full Body System)' }, { k: 'Supplements', v: 'Whey, Creatine, Mobility+, Omega 3+' }, { k: 'Duration', v: '90 days' }],
+        detailHead: "What's in the protocol.", details: [{ style: T('assets/protocol-bundle.webp', 'contain', '50% 50%'), title: 'Elite Red Light', body: 'Full-body system for daily light sessions.' }, { style: T('assets/whey-duo.webp'), title: 'Premium Whey Protein', body: '22 g protein per serving.' }, { style: T('assets/creatine.webp'), title: 'Creatine, Mobility+, Omega 3+', body: 'The rest of the daily stack.' }],
+        useHead: 'Ninety days. One routine.', useBody: 'Daily light sessions with the Elite, paired with your supplement stack — follow the guidance supplied with the protocol.', use: S('pdp-proto-use', 'IMG P-22 · Lifestyle: full protocol set up in a home space'),
+        faqs: [{ q: "What's included?", a: 'The BYND+ Elite Red Light (Full Body System), Premium Whey Protein, Creatine Monohydrate, Platinum Mobility+ and Omega 3+.' }] }
+    };
+  }
+  renderVals() {
+    const all = this.data();
+    const key = all[this.state.key] ? this.state.key : 'whey';
+    const raw = all[key];
+    const money = n => n == null ? 'Price TBC' : '$' + n.toLocaleString('en-US', { minimumFractionDigits: 2 });
+    const v = raw.variants ? raw.variants[Math.min(this.state.variant, raw.variants.length - 1)] : null;
+    const gallery = [...(v ? v.gallery : raw.gallery || []).map(s => ({ style: s })), ...(raw.gallerySlots || []).map(s => ({ slot: s.slot, label: s.label }))];
+    const idx = Math.min(this.state.img, gallery.length - 1);
+    const cur = gallery[idx];
+    const T2 = (url, size, pos) => ({ position: 'absolute', inset: 0, backgroundImage: `url(${url})`, backgroundSize: size, backgroundPosition: pos, backgroundRepeat: 'no-repeat', mixBlendMode: 'multiply' });
+    const B = 'assets/protocol-bundle.webp';
+    const fb = { whey: 'assets/whey-float.webp', creatine: 'assets/creatine.webp', mobility: 'assets/mobility.webp', omega: 'assets/omega.webp', mini: 'assets/precision-mini.webp', elite: 'assets/elite-full-body.webp', protocol: B }[key];
+    const crops = key === 'omega' ? [['contain', '50% 50%'], ['cover', '50% 50%'], ['contain', '50% 50%']] : (key === 'elite' || key === 'protocol') ? [['contain', '50% 50%'], ['cover', '50% 50%'], ['contain', '50% 50%']] : key === 'mini' ? [['contain', '50% 50%'], ['contain', '50% 50%'], ['contain', '50% 50%']] : key === 'creatine' ? [['cover', '50% 50%'], ['cover', '50% 50%'], ['cover', '50% 50%']] : key === 'mobility' ? [['cover', '50% 40%'], ['cover', '50% 40%'], ['cover', '50% 40%']] : [['cover', '50% 50%'], ['190%', '55% 35%'], ['240%', '50% 75%']];
+    const useSrc = { whey: 'assets/whey-duo.webp', creatine: 'assets/creatine.webp', mobility: 'assets/mobility.webp', omega: 'assets/omega.webp', mini: 'assets/precision-mini.webp', elite: 'assets/elite-full-body.webp', protocol: B }[key];
+    const p = { ...raw, priceLabel: money(raw.price), useSlot: raw.use.slot, useSlotLabel: raw.use.label, useSrc, badge: raw.badge || '',
+      details: raw.details.map((d, i) => d.slot ? { ...d, style: T2(fb, ...crops[i]), slot: '' } : { ...d, style: d.style || null, slot: '' }) };
+    const isSupp = raw.type === 'supp', isSub = isSupp && this.state.plan !== 'once';
+    const subN = raw.price == null ? null : Math.round(raw.price * 85) / 100;
+    const optCard = on => ({ padding: 16, borderRadius: 12, border: on ? '1.5px solid #0A0E12' : '1px solid #C9D2DA', background: on ? '#F7FAFC' : '#FFFFFF', cursor: 'pointer' });
+    const dot = on => ({ width: 18, height: 18, flexShrink: 0, borderRadius: '50%', border: on ? '5px solid #0A0E12' : '1.5px solid #8A939C', background: '#FFFFFF', boxSizing: 'border-box' });
+    const unit = isSub ? subN : raw.price;
+    const cta = { flex: 1, height: 54, borderRadius: 999, border: 0, background: raw.sold ? '#C9D2DA' : '#0A0E12', color: raw.sold ? '#34383D' : '#FFFFFF', fontFamily: "'Montserrat',sans-serif", fontSize: 14, fontWeight: 600, cursor: raw.sold ? 'not-allowed' : 'pointer' };
+    const total = unit == null ? '' : ' · ' + money(unit * this.state.qty);
+    const acc = (list, k) => list.map((a, i) => ({ ...a, open: this.state[k] === i, icon: this.state[k] === i ? '−' : '+', toggle: () => this.setState(s => ({ [k]: s[k] === i ? -1 : i })) }));
+    const specRows = raw.specs.map(r => ({ ...r, vStyle: { fontWeight: 600, textAlign: 'right', color: r.v === 'To be confirmed' ? '#8A939C' : '#0A0E12', fontStyle: r.v === 'To be confirmed' ? 'italic' : 'normal' } }));
+    const panels = [
+      { title: 'Description', text: raw.desc, rows: [] },
+      { title: raw.type === 'device' ? 'Specifications' : 'Product facts', rows: specRows, text: '' },
+      { title: 'How to use', text: raw.useBody, rows: [] },
+      { title: 'Shipping & returns', text: 'Shipping, return and warranty terms follow the BYND Human store policies. See the Shipping and Returns pages for full details.', rows: [] }
+    ];
+    const relKeys = ['whey', 'creatine', 'mobility', 'mini', 'elite', 'protocol'].filter(k => k !== key).slice(0, 5);
+    const thumbOf = k => { const r = all[k]; const g = r.variants ? r.variants[0].gallery[0] : (r.gallery || [])[0]; return g; };
+    return {
+      p, navKey: raw.type === 'device' ? (key === 'protocol' ? 'protocol' : 'rlt') : 'supps',
+      crumb: raw.crumb, crumbHref: raw.type === 'device' ? 'Red%20Light%20Therapy.dc.html' : 'Collection.dc.html?c=supplements',
+      mainStyle: cur && cur.style ? cur.style : null, mainSlot: cur && cur.slot ? cur.slot : '', mainSlotLabel: cur && cur.label ? cur.label : '',
+      thumbs: gallery.length > 1 ? gallery.map((g, i) => ({
+        frame: { position: 'relative', aspectRatio: '1/1', borderRadius: 8, overflow: 'hidden', background: '#F1F4F7', border: i === idx ? '1.5px solid #0A0E12' : '1.5px solid transparent', padding: 0, cursor: 'pointer' },
+        style: g.style || { position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'repeating-linear-gradient(45deg,#E7EEF4 0 6px,#F1F4F7 6px 12px)' },
+        pick: () => this.setState({ img: i })
+      })) : [],
+      hasVariants: !!raw.variants, variantName: v ? v.label : '',
+      variants: (raw.variants || []).map((vv, i) => ({ label: vv.label, pick: () => this.setState({ variant: i, img: 0 }),
+        style: { height: 48, borderRadius: 999, border: i === this.state.variant ? '1.5px solid #0A0E12' : '1px solid #C9D2DA', background: '#FFFFFF', fontFamily: "'Montserrat',sans-serif", fontSize: 13, fontWeight: 600, color: '#0A0E12', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, cursor: 'pointer' },
+        dot: { width: 14, height: 14, borderRadius: '50%', background: vv.dot, border: '1px solid #C9D2DA' } })),
+      qty: this.state.qty, inc: () => this.setState(s => ({ qty: s.qty + 1 })), dec: () => this.setState(s => ({ qty: Math.max(1, s.qty - 1) })),
+      ctaStyle: cta, ctaLabel: raw.sold ? 'Sold out' : (isSub ? 'Subscribe' : 'Add to cart') + total, ctaShort: raw.sold ? 'Sold out' : (isSub ? 'Subscribe' : 'Add to cart') + total,
+      addToCart: () => {
+        if (raw.sold) return;
+        const currentImg = (cur && cur.style && cur.style.backgroundImage) ? cur.style.backgroundImage.replace(/^url\(['"]?|['"]?\)$/g, '') : fb;
+        const item = {
+          id: key + (v ? '-' + v.label.toLowerCase().replace(/[^a-z0-9]/g, '-') : '') + (isSub ? '-sub' : ''),
+          key,
+          name: raw.name,
+          variant: v ? v.label : (isSub ? 'Subscription (' + (['30 days', '60 days', '90 days'][this.state.freq || 0]) + ')' : ''),
+          price: unit != null ? unit : (raw.price || 0),
+          priceLabel: money(unit != null ? unit : (raw.price || 0)),
+          qty: this.state.qty || 1,
+          image: currentImg,
+          href: 'Product.dc.html?p=' + key
+        };
+        if (window.ByndCart) window.ByndCart.addItem(item);
+      },
+      isSupp, isSub, subPrice: money(subN), subCard: optCard(isSub), onceCard: optCard(isSupp && !isSub), subDot: dot(isSub), onceDot: dot(isSupp && !isSub),
+      pickSub: () => this.setState({ plan: 'sub' }), pickOnce: () => this.setState({ plan: 'once' }),
+      freqs: ['30 days', '60 days', '90 days'].map((l, i) => ({ label: l, pick: e => { e.stopPropagation(); this.setState({ freq: i, plan: 'sub' }); }, style: { height: 36, borderRadius: 999, border: (this.state.freq || 0) === i ? '1.5px solid #0A0E12' : '1px solid #C9D2DA', background: '#FFFFFF', fontSize: 12, fontWeight: 600, display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' } })),
+      stickyThumb: (gallery[0] && gallery[0].style) || {}, stickySub: (v ? v.label + ' · ' : '') + (isSub ? 'Subscribe & save 15% · ' + money(subN) : money(raw.price)),
+      stickyStyle: { ...cta, flex: 'none', height: 46, padding: '0 24px' },
+      showSticky: !!this.state.y,
+      panels: acc(panels, 'openPanel'), faqs: acc(raw.faqs, 'openFaq'),
+      related: relKeys.map(k => ({ name: all[k].name, priceLabel: money(all[k].price), href: 'Product.dc.html?p=' + k, style: thumbOf(k) || {} }))
+    };
+  }
+}
+</script>
+</body>
+</html>

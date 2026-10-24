@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="./support.js"></script>
+  <script src="./js/store.js"></script>
+</head>
+
+<body>
+  <x-dc>
+    <helmet>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+      <link rel="stylesheet" href="css/styles.css">
+      <script src="./image-slot.js"></script>
+      <style>
+        html,
+        body {
+          margin: 0;
+          background: #FFFFFF;
+          -webkit-font-smoothing: antialiased
+        }
+
+        * {
+          box-sizing: border-box
+        }
+
+        a {
+          color: #0A0E12;
+          text-decoration: none
+        }
+
+        a:hover {
+          color: #009CFF
+        }
+
+        ::-webkit-scrollbar {
+          height: 0;
+          width: 0
+        }
+      </style>
+    </helmet>
+    <div style="background:#FFFFFF;color:#0A0E12;font-family:'Montserrat',sans-serif;min-height:100vh;overflow-x:clip">
+      <dc-import name="SiteHeader" style="position:sticky;top:0;z-index:50" active=""
+        hint-size="100%,100px"></dc-import>
+
+      <section data-screen-label="Home · Hero" style="padding:clamp(12px,1.5vw,20px) var(--pad, clamp(16px,3.5vw,36px))">
+        <div
+          style="max-width:var(--max-w, 1260px);margin:0 auto;border-radius:14px;overflow:hidden;background:#EEF2F6;display:flex;flex-wrap:wrap-reverse;align-items:center">
+          <div
+            style="flex:1 1 420px;min-width:0;padding:clamp(28px,4.5vw,64px);display:flex;flex-direction:column;gap:22px">
+            <span
+              style="display:flex;align-items:center;gap:10px;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#34383D"><span
+                style="width:8px;height:8px;border-radius:50%;background:linear-gradient(180deg,#00E3FF,#009CFF)"></span>BYND+
+              Red Light &amp; Supplements</span>
+            <h1
+              style="margin:0;font-size:clamp(38px,5.6vw,76px);font-weight:600;line-height:1.02;letter-spacing:-0.035em;text-wrap:balance">
+              Go beyond your baseline.</h1>
+            <p
+              style="margin:0;font-size:clamp(15px,1.3vw,18px);line-height:1.65;color:#34383D;max-width:480px;text-wrap:pretty">
+              Professional red light therapy devices and premium daily supplements — one system for recovery, routine
+              and performance, built for home.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:10px;padding-top:4px">
+              <a href="Red%20Light%20Therapy.dc.html"
+                style="height:52px;padding:0 30px;border-radius:999px;background:#0A0E12;color:#FFFFFF;font-weight:600;font-size:14px;display:flex;align-items:center;justify-content:center">Shop
+                red light</a>
+              <a href="Collection.dc.html?c=supplements"
+                style="height:52px;padding:0 30px;border-radius:999px;border:1px solid #0A0E12;color:#0A0E12;font-weight:600;font-size:14px;display:flex;align-items:center;justify-content:center">Explore
+                supplements</a>
+            </div>
+            <div
+              style="display:flex;flex-direction:column;gap:12px;padding-top:10px;border-top:1px solid #D5DDE4;margin-top:6px">
+              <div style="display:flex;flex-wrap:wrap;gap:8px 20px;font-size:12px;font-weight:500;color:#34383D">
+                <span style="display:flex;align-items:center;gap:6px"><svg width="15" height="15" viewBox="0 0 24 24"
+                    fill="none" stroke="#009CFF" stroke-width="1.8">
+                    <rect x="4" y="10" width="16" height="11" rx="2"></rect>
+                    <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
+                  </svg>Secure checkout</span>
+                <span style="display:flex;align-items:center;gap:6px"><svg width="15" height="15" viewBox="0 0 24 24"
+                    fill="none" stroke="#009CFF" stroke-width="1.8">
+                    <path d="M3 7h11v10H3zM14 10h4l3 3v4h-7"></path>
+                    <circle cx="7" cy="18" r="1.6"></circle>
+                    <circle cx="17" cy="18" r="1.6"></circle>
+                  </svg>Tracked shipping</span>
+                <span style="display:flex;align-items:center;gap:6px"><svg width="15" height="15" viewBox="0 0 24 24"
+                    fill="none" stroke="#009CFF" stroke-width="1.8">
+                    <path d="M4 5h16v11H8l-4 4z"></path>
+                  </svg>Real human support</span>
+              </div>
+              <div style="display:flex;flex-wrap:wrap;gap:6px">
+                <span
+                  style="width:38px;height:24px;border-radius:4px;background:#FFFFFF;border:1px solid #D5DDE4;display:flex;align-items:center;justify-content:center;color:#1A1F71;font-size:10px;font-weight:800;font-style:italic">VISA</span>
+                <span
+                  style="width:38px;height:24px;border-radius:4px;background:#FFFFFF;border:1px solid #D5DDE4;display:flex;align-items:center;justify-content:center"><span
+                    style="width:11px;height:11px;border-radius:50%;background:#EB001B"></span><span
+                    style="width:11px;height:11px;border-radius:50%;background:#F79E1B;margin-left:-4px;opacity:0.9"></span></span>
+                <span
+                  style="width:38px;height:24px;border-radius:4px;background:#2E77BC;display:flex;align-items:center;justify-content:center;color:#FFFFFF;font-size:8px;font-weight:800">AMEX</span>
+                <span
+                  style="width:38px;height:24px;border-radius:4px;background:#FFFFFF;border:1px solid #D5DDE4;display:flex;align-items:center;justify-content:center;color:#003087;font-size:8px;font-weight:800;font-style:italic">PayPal</span>
+                <span
+                  style="width:38px;height:24px;border-radius:4px;background:#5A31F4;display:flex;align-items:center;justify-content:center;color:#FFFFFF;font-size:9px;font-weight:800;font-style:italic">shop</span>
+                <span
+                  style="width:38px;height:24px;border-radius:4px;background:#FFFFFF;border:1px solid #D5DDE4;display:flex;align-items:center;justify-content:center;color:#3C4043;font-size:8px;font-weight:700">G
+                  Pay</span>
+              </div>
+            </div>
+          </div>
+          <div style="flex:1 1 420px;min-width:0;aspect-ratio:1/1;max-height:660px;position:relative">
+            <img src="assets/protocol-bundle.webp" alt="BYND+ Elite Red Light with the BYND supplement range"
+              style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;padding:6%">
+          </div>
+        </div>
+      </section>
+
+      <section data-screen-label="Home · Trust" style="padding:clamp(24px,3.2vw,36px) var(--pad, clamp(16px,3.5vw,36px)) 0">
+        <div
+          style="max-width:var(--max-w, 1260px);margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px">
+          <sc-for list="{{ trust }}" as="t" hint-placeholder-count="4">
+            <div
+              style="display:flex;gap:14px;align-items:flex-start;padding:18px;border:1px solid #E3E8ED;border-radius:10px">
+              <span
+                style="width:40px;height:40px;flex-shrink:0;border-radius:50%;background:#E7EEF4;display:flex;align-items:center;justify-content:center;color:#009CFF;font-size:16px;font-weight:700">{{
+                t.icon }}</span>
+              <span style="display:flex;flex-direction:column;gap:4px"><span style="font-size:14px;font-weight:600">{{
+                  t.title }}</span><span style="font-size:12px;line-height:1.55;color:#5A636C">{{ t.body
+                  }}</span></span>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+
+      <section data-screen-label="Home · Shop" style="padding:var(--section-pad, clamp(48px,5.5vw,76px)) 0">
+        <div
+          style="max-width:var(--max-w, 1260px);margin:0 auto;padding:0 var(--pad, clamp(16px,3.5vw,36px));display:flex;flex-direction:column;gap:20px;margin-bottom:24px">
+          <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px">
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <h2
+                style="margin:0;font-size:clamp(28px,3.6vw,44px);font-weight:600;line-height:1.1;letter-spacing:-0.03em">
+                Your routine, <span style="font-weight:400;font-style:italic">fully supported</span></h2>
+              <span style="font-size:14px;color:#5A636C">Shop by category</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px">
+              <a href="Collection.dc.html"
+                style="font-size:14px;font-weight:600;text-decoration:underline;text-underline-offset:4px;margin-right:8px">View
+                all</a>
+              <button onClick="{{ prev }}" aria-label="Previous"
+                style="width:44px;height:44px;border-radius:50%;border:1px solid #C9D2DA;background:#FFFFFF;color:#0A0E12;font-size:16px;cursor:pointer">←</button>
+              <button onClick="{{ next }}" aria-label="Next"
+                style="width:44px;height:44px;border-radius:50%;border:0;background:#0A0E12;color:#FFFFFF;font-size:16px;cursor:pointer">→</button>
+            </div>
+          </div>
+          <div
+            style="display:flex;gap:8px;overflow-x:auto;margin:0 calc(-1 * clamp(20px,4vw,48px));padding:2px clamp(20px,4vw,48px)">
+            <sc-for list="{{ chips }}" as="c" hint-placeholder-count="4">
+              <button onClick="{{ c.pick }}" style="{{ c.style }}">{{ c.label }}</button>
+            </sc-for>
+          </div>
+        </div>
+        <div style="max-width:var(--max-w, 1260px);margin:0 auto;padding:0 var(--pad, clamp(16px,3.5vw,36px))">
+          <div id="home-shop-row"
+            style="display:grid;grid-auto-flow:column;grid-auto-columns:clamp(220px,22vw,296px);justify-content:start;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:0 0 4px">
+            <sc-for list="{{ shown }}" as="p" hint-placeholder-count="4">
+              <div style="scroll-snap-align:start;display:flex;flex-direction:column;gap:14px;min-width:0;height:100%">
+                <a href="{{ p.href }}"
+                  style="position:relative;aspect-ratio:1/1;border-radius:8px;background:#F1F4F7;overflow:hidden;display:block">
+                  <div style="{{ p.imgStyle }}"></div>
+                  <span
+                    style="position:absolute;top:10px;left:10px;padding:5px 10px;border-radius:999px;background:#FFFFFF;font-size:11px;font-weight:600;color:#34383D">{{
+                    p.badge }}</span>
+                </a>
+                <div style="display:flex;flex-direction:column;gap:4px;flex:1">
+                  <a href="{{ p.href }}" style="font-size:15px;font-weight:600;line-height:1.35;min-height:2.7em;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">{{ p.name }}</a>
+                  <span
+                    style="font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#5A636C">{{
+                    p.tags }}</span>
+                </div>
+                <a href="{{ p.href }}"
+                  style="height:46px;border-radius:999px;background:#0A0E12;color:#FFFFFF;font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center;margin-top:auto">{{
+                  p.cta }}</a>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </section>
+
+      <section data-screen-label="Home · Red light intro" style="padding:0 var(--pad, clamp(16px,3.5vw,36px)) var(--section-pad, clamp(48px,5.5vw,76px))">
+        <div
+          style="max-width:var(--max-w, 1260px);margin:0 auto;display:flex;flex-wrap:wrap;gap:clamp(32px,5vw,64px);align-items:center">
+          <div
+            style="flex:1 1 420px;min-width:0;aspect-ratio:1/1;max-height:680px;border-radius:12px;background:#E7EEF4;position:relative;overflow:hidden">
+            <img src="assets/precision-mini.webp" alt="BYND+ Precision Red Light (mini)"
+              style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply">
+          </div>
+          <div style="flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:22px">
+            <span
+              style="font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#5A636C">Red
+              light therapy</span>
+            <h2
+              style="margin:0;font-size:clamp(30px,3.8vw,52px);font-weight:600;line-height:1.08;letter-spacing:-0.03em;text-wrap:balance">
+              Engineered light, built for home.</h2>
+            <p style="margin:0;font-size:16px;line-height:1.7;color:#34383D;max-width:500px">From focused desktop
+              sessions to full-body routines, BYND+ devices bring red light therapy into a daily schedule — no clinic
+              appointment required.</p>
+            <div
+              style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 20px;padding:6px 0 8px;font-size:14px;color:#34383D">
+              <span style="display:flex;gap:10px;align-items:flex-start"><span
+                  style="color:#009CFF;font-weight:700">✓</span>Targeted &amp; full-body formats</span>
+              <span style="display:flex;gap:10px;align-items:flex-start"><span
+                  style="color:#009CFF;font-weight:700">✓</span>Dense LED array</span>
+              <span style="display:flex;gap:10px;align-items:flex-start"><span
+                  style="color:#009CFF;font-weight:700">✓</span>Onboard controls</span>
+              <span style="display:flex;gap:10px;align-items:flex-start"><span
+                  style="color:#009CFF;font-weight:700">✓</span>Pairs with the 90-day protocol</span>
+            </div>
+            <a href="Red%20Light%20Therapy.dc.html"
+              style="align-self:flex-start;height:52px;padding:0 30px;border-radius:999px;background:#0A0E12;color:#FFFFFF;font-weight:600;font-size:14px;display:flex;align-items:center;justify-content:center">Explore
+              red light therapy</a>
+          </div>
+        </div>
+      </section>
+
+      <section data-screen-label="Home · Devices band"
+        style="background:#0A0E12;color:#FFFFFF;padding:var(--section-pad, clamp(48px,5.5vw,76px)) var(--pad, clamp(16px,3.5vw,36px))">
+        <div style="max-width:var(--max-w, 1260px);margin:0 auto;display:flex;flex-direction:column;gap:clamp(26px,3.6vw,40px)">
+          <div style="display:flex;flex-direction:column;gap:14px;align-items:center;text-align:center">
+            <span
+              style="font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#00E3FF">Devices</span>
+            <h2
+              style="margin:0;font-size:clamp(32px,4.4vw,60px);font-weight:600;line-height:1.05;letter-spacing:-0.03em">
+              Two formats. One standard.</h2>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:16px;max-width:1060px;margin:0 auto;width:100%">
+            <a href="Product.dc.html?p=mini"
+              style="border-radius:12px;overflow:hidden;background:#141A20;border:1px solid #232A31;display:flex;flex-direction:column;color:#FFFFFF">
+              <div style="position:relative;aspect-ratio:4/3;background:#E7EEF4;overflow:hidden"><img
+                  src="assets/precision-mini.webp" alt="BYND+ Precision Red Light (mini)"
+                  style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply"><span
+                  style="position:absolute;top:14px;left:14px;padding:6px 12px;border-radius:999px;background:#0A0E12;color:#00E3FF;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase">Targeted</span>
+              </div>
+              <div
+                style="padding:clamp(20px,2.6vw,32px);display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px">
+                <span style="display:flex;flex-direction:column;gap:6px"><span
+                    style="font-size:clamp(20px,2.2vw,28px);font-weight:600;letter-spacing:-0.02em">Precision
+                    (mini)</span><span style="font-size:14px;color:#A7B0B9">Desktop, stand-mounted ·
+                    $3,500.00</span></span>
+                <span
+                  style="height:44px;padding:0 22px;border-radius:999px;background:#FFFFFF;color:#0A0E12;font-size:13px;font-weight:600;display:flex;align-items:center">Shop
+                  the mini</span>
+              </div>
+            </a>
+            <a href="Product.dc.html?p=elite"
+              style="border-radius:12px;overflow:hidden;background:#141A20;border:1px solid #232A31;display:flex;flex-direction:column;color:#FFFFFF">
+              <div style="position:relative;aspect-ratio:4/3;background:#E7EEF4;overflow:hidden">
+                <div
+                  style="position:absolute;inset:0;background-image:url(assets/elite-full-body.webp);background-size:contain;background-position:50% 50%;background-repeat:no-repeat;mix-blend-mode:multiply">
+                </div><span
+                  style="position:absolute;top:14px;left:14px;padding:6px 12px;border-radius:999px;background:#0A0E12;color:#00E3FF;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase">Full
+                  body</span>
+              </div>
+              <div
+                style="padding:clamp(20px,2.6vw,32px);display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px">
+                <span style="display:flex;flex-direction:column;gap:6px"><span
+                    style="font-size:clamp(20px,2.2vw,28px);font-weight:600;letter-spacing:-0.02em">Elite (Full Body
+                    System)</span><span style="font-size:14px;color:#A7B0B9">Freestanding, full height ·
+                    $6,000.00</span></span>
+                <span
+                  style="height:44px;padding:0 22px;border-radius:999px;background:#FFFFFF;color:#0A0E12;font-size:13px;font-weight:600;display:flex;align-items:center">Shop
+                  the Elite</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section data-screen-label="Home · Principles" style="padding:var(--section-pad, clamp(48px,5.5vw,76px)) var(--pad, clamp(16px,3.5vw,36px))">
+        <div
+          style="max-width:var(--max-w, 1260px);margin:0 auto;display:flex;flex-wrap:wrap;gap:clamp(32px,5vw,64px);align-items:center">
+          <div style="flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:18px">
+            <span
+              style="font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#5A636C">The
+              science of light</span>
+            <h2
+              style="margin:0;font-size:clamp(30px,3.8vw,52px);font-weight:600;line-height:1.08;letter-spacing:-0.03em;text-wrap:balance">
+              Photobiomodulation, made practical.</h2>
+            <p style="margin:0;font-size:16px;line-height:1.7;color:#34383D;max-width:520px">Red light therapy — known
+              in research as photobiomodulation — studies how specific wavelengths of light interact with the body's
+              cells.</p>
+            <div style="border-top:1px solid #D5DDE4;margin-top:10px">
+              <sc-for list="{{ principles }}" as="f" hint-placeholder-count="3">
+                <div style="border-bottom:1px solid #D5DDE4">
+                  <button onClick="{{ f.toggle }}"
+                    style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;background:none;border:0;color:#0A0E12;font-family:'Montserrat',sans-serif;font-size:clamp(18px,1.8vw,22px);font-weight:600;text-align:left;cursor:pointer;letter-spacing:-0.01em">{{
+                    f.q }}<span style="font-size:20px;font-weight:400;color:#5A636C">{{ f.icon }}</span></button>
+                  <sc-if value="{{ f.open }}" hint-placeholder-val="{{ false }}">
+                    <p style="margin:0;padding:0 40px 22px 0;font-size:15px;line-height:1.7;color:#34383D">{{ f.a }}</p>
+                  </sc-if>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+          <div
+            style="flex:1 1 380px;min-width:0;aspect-ratio:4/5;max-height:680px;border-radius:12px;overflow:hidden;background:#E7EEF4;position:relative">
+            <!-- <div style="position:absolute;inset:0;background-image:url(assets/protocol-bundle.webp);background-size:230%;background-position:50% 0%;background-repeat:no-repeat;mix-blend-mode:multiply"></div> -->
+            <div
+              style="position:absolute;inset:0;background-image:url(assets/protocol-bundle.webp);background-size:contain;background-position:center;background-repeat:no-repeat;mix-blend-mode:multiply">
+            </div>
+            <div
+              style="position:absolute;left:16px;right:16px;bottom:16px;padding:16px 18px;border-radius:10px;background:rgba(255,255,255,0.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:flex;justify-content:space-between;align-items:center;gap:12px">
+              <span style="display:flex;flex-direction:column;gap:3px"><span
+                  style="font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#007ACC">Dense
+                  LED array</span><span style="font-size:14px;font-weight:600">BYND+ Elite (Full Body
+                  System)</span></span>
+              <a href="Product.dc.html?p=elite"
+                style="width:38px;height:38px;flex-shrink:0;border-radius:50%;background:#0A0E12;color:#FFFFFF;display:flex;align-items:center;justify-content:center">→</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section data-screen-label="Home · Whey spotlight"
+        style="background:#E7EEF4;padding:var(--section-pad, clamp(48px,5.5vw,76px)) var(--pad, clamp(16px,3.5vw,36px))">
+        <div
+          style="max-width:var(--max-w, 1260px);margin:0 auto;display:flex;flex-wrap:wrap-reverse;gap:clamp(32px,5vw,64px);align-items:center">
+          <div style="flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:20px">
+            <span
+              style="display:inline-flex;align-self:flex-start;padding:6px 12px;border-radius:999px;background:#FFFFFF;font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#34383D">—
+              Featured supplement</span>
+            <h2
+              style="margin:0;font-size:clamp(30px,3.8vw,52px);font-weight:600;line-height:1.08;letter-spacing:-0.03em;text-wrap:balance">
+              Premium Whey Protein.</h2>
+            <p style="margin:0;font-size:16px;line-height:1.7;color:#34383D;max-width:500px">22 grams of protein per
+              serving from whey protein isolate and concentrate. Available in Vanilla Ice Cream and Chocolate Cake.</p>
+            <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;padding:12px 0">
+              <div style="display:flex;flex-direction:column;gap:6px"><span
+                  style="font-size:clamp(24px,2.6vw,34px);font-weight:600;letter-spacing:-0.02em">22g</span><span
+                  style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#5A636C">Protein
+                  / serving</span></div>
+              <div style="display:flex;flex-direction:column;gap:6px"><span
+                  style="font-size:clamp(24px,2.6vw,34px);font-weight:600;letter-spacing:-0.02em">16.9 oz</span><span
+                  style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#5A636C">480
+                  g container</span></div>
+              <div style="display:flex;flex-direction:column;gap:6px"><span
+                  style="font-size:clamp(24px,2.6vw,34px);font-weight:600;letter-spacing:-0.02em">2</span><span
+                  style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#5A636C">Scoops,
+                  8–12 oz water</span></div>
+            </div>
+            <a href="Product.dc.html?p=whey"
+              style="align-self:flex-start;height:52px;padding:0 30px;border-radius:999px;background:#0A0E12;color:#FFFFFF;font-weight:600;font-size:14px;display:flex;align-items:center;justify-content:center">Shop
+              whey — $55.00</a>
+          </div>
+          <div
+            style="flex:1 1 420px;min-width:0;aspect-ratio:1/1;max-height:640px;border-radius:12px;overflow:hidden;background:#F2F2F2;position:relative">
+            <img src="assets/whey-duo.webp" alt="BYND Premium Whey Protein, Vanilla Ice Cream"
+              style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+          </div>
+        </div>
+      </section>
+
+      <section data-screen-label="Home · Daily stack" style="padding:var(--section-pad, clamp(48px,5.5vw,76px)) var(--pad, clamp(16px,3.5vw,36px))">
+        <div style="max-width:var(--max-w, 1260px);margin:0 auto;display:flex;flex-direction:column;gap:clamp(28px,3.5vw,44px)">
+          <div style="display:flex;flex-direction:column;gap:12px;align-items:center;text-align:center">
+            <span
+              style="font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#5A636C">Supplements</span>
+            <h2
+              style="margin:0;font-size:clamp(32px,4.4vw,60px);font-weight:600;line-height:1.05;letter-spacing:-0.03em">
+              The daily stack.</h2>
+            <p style="margin:0;font-size:15px;line-height:1.6;color:#34383D;max-width:460px">Four essentials designed to
+              sit alongside your light routine.</p>
+          </div>
+          <div
+            style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(calc(50% - 8px),260px),1fr));gap:16px">
+            <sc-for list="{{ stack }}" as="p" hint-placeholder-count="4">
+              <a href="{{ p.href }}"
+                style="display:flex;flex-direction:column;border:1px solid #E3E8ED;border-radius:10px;overflow:hidden;color:#0A0E12;background:#FFFFFF;min-width:0;height:100%">
+                <div style="position:relative;aspect-ratio:1/1;background:#F1F4F7;overflow:hidden">
+                  <div style="{{ p.imgStyle }}"></div>
+                </div>
+                <div style="padding:clamp(14px,1.6vw,20px);display:flex;flex-direction:column;gap:8px;flex:1">
+                  <span
+                    style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#007ACC">{{
+                    p.kicker }}</span>
+                  <span style="font-size:clamp(15px,1.4vw,17px);font-weight:600;line-height:1.3;min-height:2.6em">{{ p.name }}</span>
+                  <span style="font-size:13px;line-height:1.6;color:#5A636C;flex:1;min-height:3.8em">{{ p.line }}</span>
+                  <span
+                    style="display:flex;justify-content:space-between;align-items:center;padding-top:12px;margin-top:auto;border-top:1px solid #E3E8ED;font-size:13px"><span
+                      style="font-weight:600">{{ p.price }}</span><span
+                      style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase">Shop
+                      →</span></span>
+                </div>
+              </a>
+            </sc-for>
+          </div>
+        </div>
+      </section>
+
+      <section data-screen-label="Home · Compare"
+        style="background:#0A0E12;color:#FFFFFF;padding:var(--section-pad, clamp(48px,5.5vw,76px)) var(--pad, clamp(16px,3.5vw,36px))">
+        <div style="max-width:1060px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(28px,3.5vw,40px)">
+          <div style="display:flex;flex-direction:column;gap:12px;align-items:center;text-align:center">
+            <span
+              style="font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#00E3FF">Choose
+              your format</span>
+            <h2
+              style="margin:0;font-size:clamp(30px,4vw,56px);font-weight:600;line-height:1.06;letter-spacing:-0.03em;text-wrap:balance">
+              Which device is right for you?</h2>
+            <p style="margin:0;font-size:15px;line-height:1.6;color:#A7B0B9;max-width:480px">Same BYND+ standard.
+              Different coverage. Pick the one that fits your space and routine.</p>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(16px,2.5vw,28px)">
+            <sc-for list="{{ compare }}" as="c" hint-placeholder-count="2">
+              <div style="{{ c.cardStyle }}">
+                <sc-if value="{{ c.flag }}" hint-placeholder-val="{{ false }}"><span
+                    style="position:absolute;top:0;left:50%;transform:translate(-50%,-50%);padding:6px 14px;border-radius:999px;background:linear-gradient(180deg,#00E3FF,#009CFF);color:#0A0E12;font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;white-space:nowrap">{{
+                    c.flag }}</span></sc-if>
+                <div style="position:relative;aspect-ratio:1/1;border-radius:10px;background:#E7EEF4;overflow:hidden">
+                  <div style="{{ c.imgStyle }}"></div>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:4px;padding-top:4px">
+                  <span
+                    style="font-size:10px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#00E3FF">{{
+                    c.kicker }}</span>
+                  <span style="font-size:clamp(16px,2vw,24px);font-weight:600;line-height:1.2;letter-spacing:-0.02em">{{
+                    c.name }}</span>
+                  <span style="font-size:clamp(14px,1.4vw,17px);font-weight:500;color:#C9D2DA">{{ c.price }}</span>
+                </div>
+                <div style="display:flex;flex-direction:column;border-top:1px solid #2A3036">
+                  <sc-for list="{{ c.rows }}" as="r" hint-placeholder-count="5">
+                    <div
+                      style="display:flex;flex-direction:column;gap:4px;padding:14px 0;border-bottom:1px solid #2A3036">
+                      <span
+                        style="font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#6E7882">{{
+                        r.k }}</span>
+                      <span
+                        style="display:flex;align-items:center;gap:8px;font-size:clamp(13px,1.3vw,15px);line-height:1.4;color:#FFFFFF"><span
+                          style="{{ r.markStyle }}">{{ r.mark }}</span>{{ r.v }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+                <a href="{{ c.href }}" style="{{ c.ctaStyle }}">{{ c.cta }}</a>
+              </div>
+            </sc-for>
+          </div>
+          <a href="Product.dc.html?p=protocol"
+            style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding:18px 22px;border-radius:12px;border:1px solid #2A3036;background:#141A20;color:#FFFFFF">
+            <span style="display:flex;align-items:center;gap:16px"><span
+                style="width:56px;height:56px;flex-shrink:0;border-radius:8px;background:#FFFFFF;position:relative;overflow:hidden"><img
+                  src="assets/protocol-bundle.webp" alt=""
+                  style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain"></span><span
+                style="display:flex;flex-direction:column;gap:3px"><span style="font-size:14px;font-weight:600">Want
+                  light and fuel together?</span><span style="font-size:13px;color:#A7B0B9">The 90-Day Protocol pairs
+                  the Elite with the full supplement stack.</span></span></span>
+            <span style="font-size:13px;font-weight:600;color:#00E3FF">View the protocol →</span>
+          </a>
+        </div>
+      </section>
+
+      <section data-screen-label="Home · Philosophy" style="padding:var(--section-pad, clamp(48px,5.5vw,76px)) var(--pad, clamp(16px,3.5vw,36px))">
+        <div
+          style="max-width:var(--max-w, 1260px);margin:0 auto;border-radius:14px;overflow:hidden;background:#E7EEF4;display:flex;flex-wrap:wrap;align-items:stretch">
+        <div style="flex:1 1 380px;min-width:0;min-height:440px;position:relative;overflow:hidden;background:#F8F8F8">
+
+  <img src="assets/whey-float.webp"
+       alt=""
+       aria-hidden="true"
+       style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(20px);transform:scale(1.1);opacity:0.35;">
+
+  <img src="assets/whey-float.webp"
+       alt="BYND Premium Whey Protein"
+       style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;">
+
+</div>
+          <div
+            style="flex:1 1 420px;min-width:0;padding:clamp(28px,4.5vw,64px);display:flex;flex-direction:column;justify-content:center;gap:24px">
+            <span
+              style="font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#5A636C">Philosophy</span>
+            <p
+              style="margin:0;font-size:clamp(26px,3.2vw,44px);font-weight:600;line-height:1.15;letter-spacing:-0.025em;text-wrap:balance">
+              Your body is the most advanced system you'll ever own. <span style="font-weight:400;color:#34383D">We
+                build the tools to maintain it.</span></p>
+            <a href="Product.dc.html?p=protocol"
+              style="align-self:flex-start;height:52px;padding:0 30px;border-radius:999px;background:#0A0E12;color:#FFFFFF;font-weight:600;font-size:14px;display:flex;align-items:center;justify-content:center">See
+              the 90-day protocol</a>
+          </div>
+        </div>
+      </section>
+
+      <section data-screen-label="Home · FAQ" style="padding:clamp(64px,9vw,128px) clamp(20px,4vw,48px)">
+        <div style="max-width:860px;margin:0 auto;display:flex;flex-direction:column;gap:36px">
+          <h2
+            style="margin:0;text-align:center;font-size:clamp(28px,3.6vw,44px);font-weight:600;line-height:1.1;letter-spacing:-0.03em">
+            Frequently asked questions</h2>
+          <div style="border-top:1px solid #D5DDE4">
+            <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="4">
+              <div style="border-bottom:1px solid #D5DDE4">
+                <button onClick="{{ f.toggle }}"
+                  style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;background:none;border:0;color:#0A0E12;font-family:'Montserrat',sans-serif;font-size:15px;font-weight:600;text-align:left;cursor:pointer;line-height:1.45">{{
+                  f.q }}<span style="flex-shrink:0;font-size:20px;font-weight:400;color:#5A636C">{{ f.icon
+                    }}</span></button>
+                <sc-if value="{{ f.open }}" hint-placeholder-val="{{ false }}">
+                  <p style="margin:0;padding:0 40px 22px 0;font-size:15px;line-height:1.7;color:#34383D">{{ f.a }}</p>
+                </sc-if>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </section>
+
+      <dc-import name="SiteFooter" hint-size="100%,820px"></dc-import>
+    </div>
+  </x-dc>
+  <script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { cat: 'all', openFaq: 0, openP: 0 };
+  scroll(dir) { const el = document.getElementById('home-shop-row'); if (el) el.scrollBy({ left: dir * Math.max(240, el.clientWidth * 0.8), behavior: 'smooth' }); }
+  renderVals() {
+    const tile = (url, size, pos) => ({ position: 'absolute', inset: 0, backgroundImage: `url(${url})`, backgroundSize: size, backgroundPosition: pos, backgroundRepeat: 'no-repeat', mixBlendMode: 'multiply' });
+    const omega = tile('assets/omega.webp', 'contain', '50% 50%');
+    const products = [
+      { cat: 'rlt', name: 'BYND+ Elite Red Light (Full Body System)', tags: 'Red light · Full body', badge: 'Full body', cta: 'Add to cart · $6,000.00', href: 'Product.dc.html?p=elite', imgStyle: tile('assets/elite-full-body.webp', 'contain', '50% 50%') },
+      { cat: 'rlt', name: 'BYND+ Precision Red Light (mini)', tags: 'Red light · Targeted', badge: 'Targeted', cta: 'Add to cart · $3,500.00', href: 'Product.dc.html?p=mini', imgStyle: tile('assets/precision-mini.webp', 'cover', '50% 50%') },
+      { cat: 'protocol', name: 'BYND+ Elite 90-Day Red Light Reset Protocol', tags: 'Device + supplements', badge: 'Bundle', cta: 'View protocol', href: 'Product.dc.html?p=protocol', imgStyle: tile('assets/protocol-bundle.webp', '88%', '50% 50%') },
+      { cat: 'supps', name: 'Premium Whey Protein', tags: 'Recovery · Daily nutrition', badge: 'Best seller', cta: 'Add to cart · $55.00', href: 'Product.dc.html?p=whey', imgStyle: tile('assets/whey-vanilla.webp', 'cover', '50% 50%') },
+      { cat: 'supps', name: 'Creatine Monohydrate', tags: 'Strength · Energy', badge: 'In stock', cta: 'Add to cart', href: 'Product.dc.html?p=creatine', imgStyle: tile('assets/creatine.webp', 'cover', '50% 50%') },
+      { cat: 'supps', name: 'Platinum Mobility+', tags: 'Joints · Mobility', badge: 'In stock', cta: 'Add to cart', href: 'Product.dc.html?p=mobility', imgStyle: tile('assets/mobility.webp', 'cover', '50% 50%') },
+      { cat: 'supps', name: 'Omega 3+ Fish Oil', tags: 'Heart · Brain · Joints', badge: 'In stock', cta: 'Add to cart', href: 'Product.dc.html?p=omega', imgStyle: omega }
+    ];
+    const cats = [['all', 'All'], ['rlt', 'Red Light Therapy'], ['supps', 'Supplements'], ['protocol', 'Protocols']];
+    const chip = on => ({ height: 36, padding: '0 16px', borderRadius: 999, border: on ? '1px solid #0A0E12' : '1px solid #C9D2DA', background: on ? '#0A0E12' : '#FFFFFF', color: on ? '#FFFFFF' : '#0A0E12', fontFamily: "'Montserrat',sans-serif", fontSize: 12, fontWeight: 600, whiteSpace: 'nowrap', cursor: 'pointer', flexShrink: 0 });
+    const stack = [
+      { kicker: 'Recovery', name: 'Premium Whey Protein', line: '22g protein per serving from whey isolate and concentrate.', price: '$55.00', imgStyle: tile('assets/whey-chocolate.webp', 'cover', '50% 50%'), href: 'Product.dc.html?p=whey' },
+      { kicker: 'Performance', name: 'Creatine Monohydrate', line: 'Supports muscle strength, lean body mass and cellular energy production.*', price: 'Price TBC', imgStyle: tile('assets/creatine.webp', 'cover', '50% 50%'), href: 'Product.dc.html?p=creatine' },
+      { kicker: 'Mobility', name: 'Platinum Mobility+', line: 'Supports joint comfort, flexibility and healthy mobility.* 60 capsules.', price: 'Price TBC', imgStyle: tile('assets/mobility.webp', 'cover', '50% 50%'), href: 'Product.dc.html?p=mobility' },
+      { kicker: 'Daily health', name: 'Omega 3+ Fish Oil', line: 'EPA 180mg + DHA 120mg. 100 softgels.', price: 'Price TBC', imgStyle: omega, href: 'Product.dc.html?p=omega' }
+    ];
+    const yes = { width: 20, height: 20, flexShrink: 0, borderRadius: '50%', background: 'rgba(0,227,255,0.14)', color: '#00E3FF', fontSize: 11, fontWeight: 700, display: 'flex', alignItems: 'center', justifyContent: 'center' };
+    const no = { ...yes, background: 'rgba(255,255,255,0.06)', color: '#6E7882' };
+    const card = hi => ({ position: 'relative', display: 'flex', flexDirection: 'column', gap: 16, padding: 'clamp(12px,2vw,24px)', borderRadius: 14, background: hi ? '#141A20' : '#0F1419', border: hi ? '1px solid #009CFF' : '1px solid #232A31' });
+    const cta = hi => ({ height: 48, borderRadius: 999, background: hi ? 'linear-gradient(180deg,#00E3FF,#009CFF)' : '#FFFFFF', color: '#0A0E12', fontSize: 13, fontWeight: 700, display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 'auto' });
+    const row = (k, v, ok) => ({ k, v, mark: ok ? '✓' : '—', markStyle: ok ? yes : no });
+    const compare = [
+      { kicker: 'Targeted', name: 'Precision (mini)', price: '$3,500.00', href: 'Product.dc.html?p=mini', cta: 'Shop the mini', flag: '', imgStyle: tile('assets/precision-mini.webp', 'cover', '50% 50%'), cardStyle: card(false), ctaStyle: cta(false),
+        rows: [row('Format', 'Desktop, stand-mounted', true), row('Coverage', 'Targeted areas', true), row('Ideal space', 'Desk, counter, nightstand', true), row('Full-body sessions', 'Not designed for', false), row('In the 90-Day Protocol', 'Sold separately', false)] },
+      { kicker: 'Full body', name: 'Elite (Full Body System)', price: '$6,000.00', href: 'Product.dc.html?p=elite', cta: 'Shop the Elite', flag: 'Most complete', imgStyle: tile('assets/elite-full-body.webp', 'contain', '50% 50%'), cardStyle: card(true), ctaStyle: cta(true),
+        rows: [row('Format', 'Freestanding, full height', true), row('Coverage', 'Full body', true), row('Ideal space', 'Home gym, bedroom, studio', true), row('Full-body sessions', 'Designed for', true), row('In the 90-Day Protocol', 'Included', true)] }
+    ];
+    const trust = [
+      { icon: '⌁', title: 'Secure checkout', body: 'Encrypted payments with all major cards and wallets.' },
+      { icon: '→', title: 'Tracked shipping', body: 'Every order ships with tracking to your door.' },
+      { icon: '✓', title: 'Quality guaranteed', body: 'Devices and supplements held to one BYND+ standard.' },
+      { icon: '◎', title: 'Real human support', body: 'Questions on choosing a device? Talk to our team.' }
+    ];
+    const pRaw = [
+      { q: 'Precision', a: 'Targeted and full-body formats, so light goes exactly where your routine needs it.' },
+      { q: 'Consistency', a: 'Designed to live at home and fit a daily schedule — the habit is the protocol.' },
+      { q: 'Integration', a: 'Light pairs with daily nutrition in one structured, 90-day protocol.' }
+    ];
+    const faqRaw = [
+      { q: "What's included in the 90-Day Red Light Reset Protocol?", a: 'The protocol pairs the BYND+ Elite Red Light (Full Body System) with the BYND supplement range: Premium Whey Protein, Creatine Monohydrate, Platinum Mobility+ and Omega 3+.' },
+      { q: 'What is the difference between the Precision (mini) and the Elite?', a: 'The Precision (mini) is a compact, stand-mounted panel for targeted sessions. The Elite is a freestanding, full-height panel designed for full-body sessions.' },
+      { q: 'How do I prepare Premium Whey Protein?', a: 'Mix two scoops with 8–12 oz of cold water. Each serving contains 22 grams of protein from whey protein isolate and concentrate.' },
+      { q: 'Can I subscribe to supplements?', a: 'Yes — choose Subscribe & save on any supplement product page and pick your delivery frequency. Pause or cancel anytime.' }
+    ];
+    const acc = (list, key) => list.map((f, i) => ({ ...f, open: this.state[key] === i, icon: this.state[key] === i ? '−' : '+', toggle: () => this.setState(s => ({ [key]: s[key] === i ? -1 : i })) }));
+    return {
+      trust,
+      chips: cats.map(([k, l]) => ({ label: l, style: chip(this.state.cat === k), pick: () => { this.setState({ cat: k }); const el = document.getElementById('home-shop-row'); if (el) el.scrollLeft = 0; } })),
+      shown: products.filter(p => this.state.cat === 'all' || p.cat === this.state.cat),
+      prev: () => this.scroll(-1), next: () => this.scroll(1),
+      stack, compare,
+      principles: acc(pRaw, 'openP'), faqs: acc(faqRaw, 'openFaq')
+    };
+  }
+}
+</script>
+</body>
+
+</html>
